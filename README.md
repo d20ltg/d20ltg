@@ -2,15 +2,22 @@
 
 Store website and inventory tracking system
 
-## Resources
+## Tools and Resources
 
-Resource               | Tool         | Link
----------------------- | ------------ | ----
+Tool                   | Provider     | Link
+---------------------- | ------------ | -----------------------
 Scrum Management       | Acunote      | http://gold.acunote.com
 Document Collaboration | Google Drive | https://drive.google.com/a/thecodesmith.com/folderview?id=0ByQksidROWkJT2NvR3FJRFlOTXc&usp=sharing
 Source Code            | GitHub       | http://github.com/d20ltg/d20ltg
 Web Hosting Dashboard  | Heroku       | https://dashboard.heroku.com/apps/d20ltg
 Live Website           | Heroku       | http://d20ltg.herokuapp.com (This will be updated with custom domain)
+
+
+Resource               | Link
+---------------------- | -----------------------
+Rails Tutorial         | https://www.railstutorial.org/ (click "Read Online Free")
+Heroku Ruby Intro      | https://devcenter.heroku.com/articles/getting-started-with-ruby
+Heroku Rails Intro     | https://devcenter.heroku.com/articles/getting-started-with-rails4
 
 ## Development Environment Setup
 
