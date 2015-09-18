@@ -5,6 +5,7 @@ Store website and inventory tracking system
 ## Resources
 
 Resource               | Tool         | Link
+---------------------- | ------------ | ----
 Scrum Management       | Acunote      | http://gold.acunote.com
 Document Collaboration | Google Drive | https://drive.google.com/a/thecodesmith.com/folderview?id=0ByQksidROWkJT2NvR3FJRFlOTXc&usp=sharing
 Source Code            | GitHub       | http://github.com/d20ltg/d20ltg
@@ -35,7 +36,11 @@ http://guides.railsgirls.com/install/.
 
     gem install rails --no-ri --no-doc
 
-### Heroku (reference: https://devcenter.heroku.com/articles/getting-started-with-ruby)
+### Heroku
+
+Reference: https://devcenter.heroku.com/articles/getting-started-with-ruby
+
+#### Install Heroku Toolbelt
 
     gem install bundler
     brew install heroku
