@@ -14,3 +14,15 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.container {
+  //background-image: url(/images/190-570-background.gif);
+  max-width: 960px;
+  display: block;
+  clear:both;
+  overflow: hidden;
+  border-left: 1px solid #7F704F; 
+  border-right: 1px solid #7F704F;
+  min-height: 600px;
+}
