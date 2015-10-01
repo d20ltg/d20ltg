@@ -2,6 +2,8 @@
 
 Store website and inventory tracking system
 
+[![Build Status](https://travis-ci.org/d20ltg/d20ltg.svg)](https://travis-ci.org/d20ltg/d20ltg)
+
 ## Tools and Resources
 
 Tool                   | Provider     | Link
