@@ -1,0 +1,16 @@
+.nav {
+  border-top: 1px solid #7F704F;
+  border-bottom: 1px solid #7F704F;
+  background-color:  #202020;
+  border-color: #585858;
+}
+
+.nav li > a:hover,
+.nav li > a:focus {
+  color: #585858;
+}
+
+/* Link */
+.nav > li > a {
+  color:    #F8F8F8;
+}

@@ -15,14 +15,34 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.pageheader {
+  margin-left: 1%;
+}
+
+.nav {
+  border-bottom: 1px solid #7F704F;
+}
+
+.content_wrap {
+  margin-top: 0px;
+  background-image: url("BFZ_Header_preloader.jpg");
+  //background-image: url("Mountain.jpg");
+  background-size: 100% 100%;
+  padding-top: 100px;
+}
 
 .container {
-  //background-image: url(/images/190-570-background.gif);
+  margin-top: 100px;
   max-width: 960px;
   display: block;
   clear:both;
   overflow: hidden;
   border-left: 1px solid #7F704F; 
   border-right: 1px solid #7F704F;
-  min-height: 600px;
+  border-top: 1px solid #7F704F;
+  min-height: 900px;
+  background-color: #E8E8E8; 
+  opacity: 0.85;
 }
+
+
