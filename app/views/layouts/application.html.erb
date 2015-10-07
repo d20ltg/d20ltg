@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>D20ltg</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag    'navbar', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <head>
+    <title>D20gamers</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'navbar', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
-<body>
-  <%= render :partial => 'layouts/topbar' %>
-  <div class="content_wrap">
-    <div class="container">  
-      <%= yield %>
+  <body>
+    <%= render :partial => 'layouts/topbar' %>
+    <div class="content_wrap">
+      
+      <div class="container">
+        <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+        
+        <%= yield %>
+      </div>
     </div>
-  </div>
-</body>
+    
+  </body>
 </html>
