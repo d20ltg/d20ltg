@@ -53,3 +53,14 @@ Reference: https://devcenter.heroku.com/articles/getting-started-with-ruby
 
     gem install bundler
     brew install heroku
+
+### Source Code
+
+    git clone git@github.com:d20ltg/d20ltg
+    cd d20ltg
+    bundle install --without production
+
+Note: PostgreSQL is not necessary to run locally during development if the
+`--without production` flag is used with bundle install. PostgreSQL will be
+used automatically in production on Heroku. Local databases will use the
+default sqlite3.
