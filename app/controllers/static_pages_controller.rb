@@ -10,4 +10,20 @@ class StaticPagesController < ApplicationController
 
   def magic
   end
+  
+  def tabletop
+  end
+  
+  def comics
+  end
+  
+  def calendar
+  end
+  
+  def login
+  end
+  
+  def gatherer
+  end
+  
 end
