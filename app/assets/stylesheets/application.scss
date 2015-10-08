@@ -23,14 +23,14 @@
   //text-shadow: -1px 0 white, 0 1px white, 1px 0 black, 0 -1px white;
 }
 
-.nav {
+/*.nav {
   border-bottom: 1px solid #7F704F;
-}
+}*/
 
 .content_wrap {
   //margin-top: -1.6%;
   //background-image: url("BFZ_Header_preloader.jpg");
-  background-image: url("Mountain.jpg");
+  background-image: image-url("Mountain.jpg");
   background-size: 100% 100%;
   padding-top: 100px;
 }
@@ -41,11 +41,11 @@
   display: block;
   clear:both;
   overflow: hidden;
-  border-left: 1px solid #7F704F; 
+  border-left: 1px solid #7F704F;
   border-right: 1px solid #7F704F;
   border-top: 1px solid #7F704F;
   min-height: 900px;
-  background-color: #E8E8E8; 
+  background-color: #E8E8E8;
   opacity: 0.85;
 }
 
