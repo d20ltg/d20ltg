@@ -1,0 +1,21 @@
+<h1>Cards</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Card Name</th>
+      <th>Card Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.name %></td>
+        <td><%= card.card_type %></td>
+        <td><%= link_to "Edit", edit_card_path(card.id) %></td>
+      <tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "new card", new_card_path %>

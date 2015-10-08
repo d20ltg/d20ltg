@@ -1,0 +1,10 @@
+<br>
+  <%= semantic_form_for(@card, :html => { :multipart => true }) do |f| %>
+    <%= f.inputs do %>
+      <%= f.input :name %>
+      <%= f.input :card_type %>
+    <% end %>
+
+    <%= f.submit :disable_with => "Saving..." %>
+  <% end %>
+<br>

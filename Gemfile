@@ -12,6 +12,7 @@ gem 'carrierwave',    '0.10.0'
 gem 'rmagick',        '2.15.4'
 gem 'blueimp-gallery'
 gem 'sdoc',           '0.4.1', group: :doc
+gem 'formtastic'
 
 ruby '2.1.5'
 
