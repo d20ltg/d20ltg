@@ -5,6 +5,6 @@
       <%= f.input :card_type %>
     <% end %>
 
-    <%= f.submit :disable_with => "Saving..." %>
+    <%= f.action :submit, as: :button, :disable_with => "Saving..." %>
   <% end %>
 <br>

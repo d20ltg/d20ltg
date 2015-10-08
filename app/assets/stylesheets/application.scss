@@ -9,27 +9,20 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
  */
-// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "formtastic-bootstrap";
 @import "blueimp-gallery-all";
 
 .pageheader {
   margin-left: 1%;
   font: Arial Black;
   color: black;
-  //text-shadow: -1px 0 white, 0 1px white, 1px 0 black, 0 -1px white;
 }
 
-/*.nav {
-  border-bottom: 1px solid #7F704F;
-}*/
-
 .content_wrap {
-  //margin-top: -1.6%;
-  //background-image: url("BFZ_Header_preloader.jpg");
   background-image: image-url("Mountain.jpg");
   background-size: 100% 100%;
   padding-top: 100px;
@@ -48,5 +41,3 @@
   background-color: #E8E8E8;
   opacity: 0.85;
 }
-
-

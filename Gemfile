@@ -11,8 +11,10 @@ gem 'jbuilder',       '2.3.1'
 gem 'carrierwave',    '0.10.0'
 gem 'rmagick',        '2.15.4'
 gem 'blueimp-gallery'
-gem 'sdoc',           '0.4.1', group: :doc
 gem 'formtastic'
+gem 'formtastic-bootstrap'
+
+gem 'sdoc',           '0.4.1', group: :doc
 
 ruby '2.1.5'
 
