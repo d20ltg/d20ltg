@@ -2,7 +2,5 @@ language: ruby
 rvm:
   - 2.1.5
 
-addons:
-  postgresql: "9.3"
 before_script:
-  - psql -c 'create database db_test;' -U postgres
+  - bundle install --without production
