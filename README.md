@@ -38,8 +38,8 @@ http://guides.railsgirls.com/install/.
 
 #### Ruby
 
-    rbenv install 2.2.3
-    rbenv global 2.2.3
+    rbenv install 2.1.5
+    rbenv global 2.1.5
 
 #### Rails
 
