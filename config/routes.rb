@@ -1,23 +1,22 @@
 Rails.application.routes.draw do
+
   get 'cards/index'
-
   get 'cards/show'
-
   get 'cards/new'
-
   get 'cards/edit'
-
   get 'cards/create'
 
   root to: "static_pages#home"
 
   get 'static_pages/home'
-
   get 'static_pages/about'
-
   get 'static_pages/contact'
-
   get 'static_pages/magic'
+  get 'static_pages/tabletop'
+  get 'static_pages/comics'
+  get 'static_pages/calendar'
+  get 'static_pages/login'
+  get 'static_pages/gatherer'
 
   resources :cards
 

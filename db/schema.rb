@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20151007222953) do
     t.string   "card_type"
   end
 
-  create_table "exapnsions", force: true do |t|
+  create_table "expansions", force: true do |t|
     t.string   "set_name"
     t.datetime "created_at"
     t.datetime "updated_at"
