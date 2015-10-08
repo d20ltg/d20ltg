@@ -17,11 +17,10 @@ Rails.application.routes.draw do
 
   get 'static_pages/contact'
 
-<<<<<<< HEAD
-  resources :cards
-=======
   get 'static_pages/magic'
->>>>>>> 5bb377037be778ebca6c754c01273caaab24a531
+
+  resources :cards
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
