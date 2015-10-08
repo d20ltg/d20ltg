@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>D20gamers</title>
+    <title>d20 Legendary Tabletop Games</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag    'navbar', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -10,13 +10,12 @@
   <body>
     <%= render :partial => 'layouts/topbar' %>
     <div class="content_wrap">
-      
+
       <div class="container">
-        <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-        
+
         <%= yield %>
       </div>
     </div>
-    
+
   </body>
 </html>
