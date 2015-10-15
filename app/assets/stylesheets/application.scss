@@ -9,6 +9,10 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
+ *
+ *= require_self
+ *= require bxslider
+ *= require_tree .
  */
 
 @import "bootstrap-sprockets";
@@ -40,4 +44,30 @@
   min-height: 900px;
   background-color: #E8E8E8;
   opacity: 0.85;
+}
+
+.bxslider img {
+  margin: 0 auto;
+}
+
+/*#bx-pager {
+  bottom: -95px;
+}*/
+
+#bx-pager {
+  text-align: center;
+  margin-top: -30px;
+  float: left;
+  width: 100%;
+}
+
+#bx-pager a {
+  display: inline-block;
+  border: solid #ccc 1px;
+  padding: 3px;
+}
+
+#bx-pager a:hover,
+#bx-pager a.active {
+  border: solid #5280DD 1px;
 }
