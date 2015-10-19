@@ -10,6 +10,8 @@ gem 'turbolinks',     '2.5.3'
 gem 'jbuilder',       '2.3.1'
 gem 'carrierwave',    '0.10.0'
 gem 'rmagick',        '2.15.4'
+gem 'bxslider-rails'
+
 gem 'blueimp-gallery'
 gem 'formtastic'
 gem 'formtastic-bootstrap'

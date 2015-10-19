@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require jquery-ui/datepicker
+//= require bxslider
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require blueimp-gallery-all
