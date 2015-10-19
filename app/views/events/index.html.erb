@@ -1,0 +1,25 @@
+<!--<h1>Events</h1>-->
+
+<h2 id="month">
+  <%= link_to "<", date: @date.prev_month %>
+  <%= @date.strftime("%B %Y") %>   
+  <%= link_to ">", date: @date.next_month %>
+</h2>
+
+<div id="events">
+  <h2 id="month"><%= @date.strftime("%B %Y") %></h2>
+  <%= calendar @date do |date| %>
+    <%= date.day %>
+    <% if @events_by_date[date] %>
+      <ul>
+        <% @events_by_date[date].each do |event| %>
+          <li><%= link_to event.title, event %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
+
+<br>
+<br>
+<%= link_to "New Event", new_event_path, data: { no_turbolink: true } %>

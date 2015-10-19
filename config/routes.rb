@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'events/new'
+
+  get 'events/edit'
+
+  get 'events/create'
+
+  get 'events/show'
+
+  get 'events/index'
+
   get 'cards/index'
   get 'cards/show'
   get 'cards/new'
@@ -19,6 +29,7 @@ Rails.application.routes.draw do
   get 'static_pages/gatherer'
 
   resources :cards
+  resources :events
 
 
   # The priority is based upon order of creation: first created -> highest priority.
