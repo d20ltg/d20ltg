@@ -1,3 +1,7 @@
+# Metadata files
+.DS_Store
+Thumbs.db
+
 *.rbc
 capybara-*.html
 .rspec
