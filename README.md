@@ -7,6 +7,7 @@ Store website and inventory tracking system
 ## Website Links
 
 Site         | Link
+------------ | --------------------
 Live Website | http://d20gamers.com
 Staging Site | http://d20ltg-staging.herokuapp.com
 
