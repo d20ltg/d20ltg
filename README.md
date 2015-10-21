@@ -4,6 +4,12 @@ Store website and inventory tracking system
 
 [![Build Status](https://travis-ci.org/d20ltg/d20ltg.svg)](https://travis-ci.org/d20ltg/d20ltg)
 
+## Website Links
+
+Site         | Link
+Live Website | http://d20gamers.com
+Staging Site | http://d20ltg-staging.herokuapp.com
+
 ## Tools and Resources
 
 Tool                   | Provider     | Link
@@ -12,8 +18,7 @@ Scrum Management       | Acunote      | http://gold.acunote.com
 Document Collaboration | Google Drive | https://drive.google.com/a/thecodesmith.com/folderview?id=0ByQksidROWkJT2NvR3FJRFlOTXc&usp=sharing
 Source Code            | GitHub       | http://github.com/d20ltg/d20ltg
 Web Hosting Dashboard  | Heroku       | https://dashboard.heroku.com/apps/d20ltg
-Live Website           | Heroku       | http://d20ltg.herokuapp.com (This will be updated with custom domain)
-
+Continuous Integration | TravisCI     | https://travis-ci.org/d20ltg/d20ltg
 
 Resource               | Link
 ---------------------- | -----------------------
@@ -108,3 +113,14 @@ If there are any merge conflicts, use `git status` to view conflicted files.
 Open each file and fix the merge conflicts, then save and use `git add` to mark
 the file as fixed. Once all conflicts are fixed, use `git commit` to finish the
 merge.
+
+## Deployment
+
+The `master` branch represents the production code. Heroku detects pushes to the
+`master` branch and automatically deploys the new code, as long as the build
+passes the continuous integration tests. If the TravisCI build is green, visit
+http://d20gamers.com to view the deploy.
+
+The `dev` branch will be automatically deployed to the staging site at
+http://d20ltg-staging.herokuapp.com following a push to GitHub and a successful
+build in TravisCI.
