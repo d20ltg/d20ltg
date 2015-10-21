@@ -12,7 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require jquery-ui/datepicker
+//= require bxslider
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require blueimp-gallery-all
 //= require_tree .
+
+$(document).ready(function() {
+
+  $("#day_picked").datepicker({
+    dateFormat: 'yy-mm-dd'
+  });
+
+    
+});

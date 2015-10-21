@@ -1,36 +1,25 @@
 <h1>Welcome to d20!</h1>
 
-<div id="blueimp-gallery-carousel" class="blueimp-gallery blueimp-gallery-carousel">
+<div id="wrapper">
+    <ul class="bxslider">
+      <li><%= image_tag("ulamog_bfz.jpg", height: '300px') %></li>
+      <li><%= image_tag("bfz_header_preloader.jpg", height: '300px') %></li>
+      <li><%= image_tag("d20ltg_cover_01.png", height: '300px') %></li>
+  </ul>
 
-  <div class="slides"></div>
-  <h3 class="title"></h3>
-  <a class="prev">‹</a>
-  <a class="next">›</a>
-  <a class="play-pause"></a>
-  <ol class="indicator"></ol>
+  <div id="bx-pager">
+    <a data-slide-index="0" href=""><%= image_tag("ulamog_bfz.jpg", height: '50px', width: '50px') %></a>
+    <a data-slide-index="1" href=""><%= image_tag("bfz_header_preloader.jpg", height: '50px', width: '50px') %></a>
+  </div>
 </div>
 
-<div id="links">
-<!--<= link_to image_tag('Mountain-thumb.jpg'), "Mountain.jpg", data: {gallery: 'gallery'} %>-->
-</div>
+<script type="text/javascript">
+  $(window).load(function() {
+    $('.bxslider').bxSlider();
+  });
 
-<script>
-  document.getElementById('links').onclick = function (event) {
-    event = event || window.event;
-    var target = event.target || event.srcElement,
-    link = target.src ? target.parentNode : target,
-    options = {index: link, event: event},
-    links = this.getElementsByTagName('a');
-    blueimp.Gallery(links, options);
-  };
-</script>
-
-<script>
-  blueimp.Gallery(
-      document.getElementById('links').getElementsByTagName('a'),
-      {
-        container: '#blueimp-gallery-carousel',
-        carousel: true
-      }
-      );
+  $('.bxslider').bxSlider({
+    pagerCustom: '#bx-pager',
+    auto: true
+  });
 </script>
