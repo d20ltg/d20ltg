@@ -26,5 +26,8 @@ $(document).ready(function() {
     dateFormat: 'yy-mm-dd'
   });
 
+  $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+  })
     
 });
