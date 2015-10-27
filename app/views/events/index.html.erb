@@ -13,7 +13,7 @@
     <% if @events_by_date[date] %>
       <ul>
         <% @events_by_date[date].each do |event| %>
-          <li><%= link_to event.title, event, data: {toggle: "tooltip", placement: "right"} %></li>
+          <li><%= link_to event.title, event, class: "cal-tooltip", data: {:toggle => "tooltip", placement: "right"}, 'data-original-title' => event.description %></li>
         <% end %>
       </ul>
     <% end %>
@@ -23,3 +23,5 @@
 <br>
 <br>
 <%= link_to "New Event", new_event_path, data: { no_turbolink: true } %>
+
+

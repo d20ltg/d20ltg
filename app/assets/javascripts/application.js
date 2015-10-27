@@ -26,8 +26,13 @@ $(document).ready(function() {
     dateFormat: 'yy-mm-dd'
   });
 
-  $(function () {
-      $('[data-toggle="tooltip"]').tooltip()
-  })
-    
+  $('.cal-tooltip').tooltip();
+
+      
 });
+
+$(document).on("ready page:change", function() {
+  $('.cal-tooltip').tooltip();
+});
+
+
