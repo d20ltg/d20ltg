@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'events/index'
+  get 'events/show'
+  get 'events/new'
+  get 'events/edit'
+  get 'events/create'
+  get 'events/upcoming'
+
   get 'cards/index'
   get 'cards/show'
   get 'cards/new'
@@ -25,6 +32,7 @@ Rails.application.routes.draw do
 
   resources :cards
   resources :announcements, only: [:index, :new, :create, :destroy]
+  resources :events
 
 
   # The priority is based upon order of creation: first created -> highest priority.

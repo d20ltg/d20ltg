@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     @announcements = Announcement.all
+    @events = Event.where('event_day > ?', Date.today).order(:event_day).limit(5)
   end
 
   def about
@@ -11,20 +12,20 @@ class StaticPagesController < ApplicationController
 
   def magic
   end
-  
+
   def tabletop
   end
-  
+
   def comics
   end
-  
+
   def calendar
   end
-  
+
   def login
   end
-  
+
   def gatherer
   end
-  
+
 end

@@ -18,6 +18,11 @@ gem 'formtastic-bootstrap'
 
 gem 'sdoc',           '0.4.1', group: :doc
 
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+#   # gem 'therubyracer', :platforms => :ruby
+#
+gem 'jquery-ui-rails'
+
 ruby '2.1.5'
 
 group :development, :test do
