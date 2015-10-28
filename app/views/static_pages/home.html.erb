@@ -1,16 +1,18 @@
 <h1>Welcome to d20!</h1>
 
+<%= link_to "New Announcement", new_announcement_path, class: "btn btn-primary" %>
+<br />
 <div id="wrapper">
     <ul class="bxslider">
-      <li><%= image_tag("ulamog_bfz.jpg", height: '300px') %></li>
-      <li><%= image_tag("bfz_header_preloader.jpg", height: '300px') %></li>
-      <li><%= image_tag("d20ltg_cover_01.png", height: '300px') %></li>
-  </ul>
+      <% @announcements.each do |announcement| %>
+	<li><%= image_tag(announcement.image, height: "300px") %></li>
+      <% end %>
+    </ul>
 
   <div id="bx-pager">
-    <a data-slide-index="0" href=""><%= image_tag("ulamog_bfz.jpg", height: '50px', width: '50px') %></a>
-    <a data-slide-index="1" href=""><%= image_tag("bfz_header_preloader.jpg", height: '50px', width: '50px') %></a>
-    <a data-slide-index="2" href=""><%= image_tag("d20ltg_cover_01.png", height: '50px', width: '50px') %></a>
+    <% @announcements.each do |announcement| %>
+      <a data-slide-index="<%= announcement.id-1 %>" href=""><%= image_tag(announcement.image, height: '50px', width: '50px') %></a>
+    <% end %>
   </div>
 </div>
 
@@ -21,6 +23,7 @@
 
   $('.bxslider').bxSlider({
     pagerCustom: '#bx-pager',
-    auto: true
+    auto: true,
+    autoHover: true
   });
 </script>

@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   get 'cards/edit'
   get 'cards/create'
 
+  get 'announcements/index'
+  get 'announcements/open'
+  get 'announcements/new'
+  get 'announcements/edit'
+
   root to: "static_pages#home"
 
   get 'static_pages/home'
@@ -19,6 +24,7 @@ Rails.application.routes.draw do
   get 'static_pages/gatherer'
 
   resources :cards
+  resources :announcements, only: [:index, :new, :create, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

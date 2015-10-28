@@ -1,0 +1,25 @@
+<% if !@announcement.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @announcement.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= render 'form' %>
+
+<!--<div class="well">
+  <%= form_for @announcement, html: { multipart: true } do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br />
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+    <br />
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+</div>-->
