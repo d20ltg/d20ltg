@@ -29,6 +29,11 @@ class EventsController < ApplicationController
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
+  def upcoming
+    @events = Event.where('event_day > ?', Date.today).order(:event_day).limit(5)
+    render :partial=>'upcoming'
+  end
+
   private
 
     def event_params

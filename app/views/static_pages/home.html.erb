@@ -1,9 +1,9 @@
 <h1>Welcome to d20!</h1>
 
 <div id="wrapper">
-    <ul class="bxslider">
-      <li><%= image_tag("ulamog_bfz.jpg", height: '300px') %></li>
-      <li><%= image_tag("bfz_header_preloader.jpg", height: '300px') %></li>
+  <ul class="bxslider">
+    <li><%= image_tag("ulamog_bfz.jpg", height: '300px') %></li>
+    <li><%= image_tag("bfz_header_preloader.jpg", height: '300px') %></li>
   </ul>
 
   <div id="bx-pager">
@@ -11,6 +11,8 @@
     <a data-slide-index="1" href=""><%= image_tag("bfz_header_preloader.jpg", height: '50px', width: '50px') %></a>
   </div>
 </div>
+
+<%= render partial: "events/upcoming", locals: {events: @events}  %>
 
 <script type="text/javascript">
   $(window).load(function() {

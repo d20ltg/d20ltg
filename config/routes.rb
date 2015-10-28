@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'events/new'
-
-  get 'events/edit'
-
-  get 'events/create'
-
-  get 'events/show'
-
   get 'events/index'
+  get 'events/show'
+  get 'events/new'
+  get 'events/edit'
+  get 'events/create'
+  get 'events/upcoming'
 
   get 'cards/index'
   get 'cards/show'
