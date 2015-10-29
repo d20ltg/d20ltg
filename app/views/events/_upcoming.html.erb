@@ -1,11 +1,11 @@
 <div class="upcoming-events">
-  <h2>Upcoming Events</h2>
+  <h3>Upcoming Events</h3>
 
-  <% @events.each do |event| %>
+  <% @upcoming_events.each do |event| %>
     <div class="event-listing">
-      <h3 class="title"><%= event.title %></h3>
-      <p class="date">Date: <%= event.event_day %>
-      <p class="description"><%= event.description %></p>
+      <h4 class="title"><%= link_to event.title, event %></h4>
+      <p class="date"><%= event.event_day.strftime("%B %-d, %Y") %>
+      <p class="description"><%= event.description[0..30].gsub(/\s\w+\s*$/, " ...") %></p>
     </div>
   <% end %>
 </div>

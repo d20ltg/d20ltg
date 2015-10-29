@@ -1,13 +1,13 @@
-<!--<h1>Events</h1>-->
-
-<h2 id="month">
-  <%= link_to "<", date: @date.prev_month %>
-  <%= @date.strftime("%B %Y") %>   
-  <%= link_to ">", date: @date.next_month %>
-</h2>
+<h1>Events</h1>
 
 <div id="events">
-  <h2 id="month"><%= @date.strftime("%B %Y") %></h2>
+
+  <h2 id="month">
+    <%= link_to "<", date: @date.prev_month %>
+    <%= @date.strftime("%B %Y") %>
+    <%= link_to ">", date: @date.next_month %>
+  </h2>
+
   <%= calendar @date do |date| %>
     <%= date.day %>
     <% if @events_by_date[date] %>
@@ -20,8 +20,8 @@
   <% end %>
 </div>
 
-<br>
-<br>
-<%= link_to "New Event", new_event_path, data: { no_turbolink: true } %>
+<div id="buttons" class="col-md-12">
+  <%= link_to "New Event", new_event_path, data: { no_turbolink: true }, class: "btn btn-primary pull-right" %>
+</div>
 
-
+<%= render partial: "events/upcoming" %>
