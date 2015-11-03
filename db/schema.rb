@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014220050) do
+ActiveRecord::Schema.define(version: 20151030214219) do
 
   create_table "cards", force: true do |t|
     t.datetime "created_at"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20151014220050) do
     t.string   "name"
     t.string   "color"
     t.string   "card_type"
+    t.integer  "expansion_id"
   end
 
   create_table "events", force: true do |t|
@@ -42,6 +43,12 @@ ActiveRecord::Schema.define(version: 20151014220050) do
     t.integer  "card_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "static_pages", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "content"
   end
 
 end

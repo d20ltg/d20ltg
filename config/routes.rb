@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'expansions/new'
+
+  get 'expansions/edit'
+
+  get 'expansions/create'
+
+  get 'expansions/update'
+
+  get 'expansions/show'
+
+  get 'expansions/index'
+
   get 'events/index'
   get 'events/show'
   get 'events/new'
