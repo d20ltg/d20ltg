@@ -5,9 +5,11 @@ one:
   store_phone: MyString
   store_email: MyString
   store_description: MyString
+  store_hours: MyString
 
 two:
   store_address: MyString
   store_phone: MyString
   store_email: MyString
   store_description: MyString
+  store_hours: MyString
