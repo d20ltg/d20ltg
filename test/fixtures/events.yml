@@ -5,9 +5,11 @@ one:
   title: MyString
   description: MyString
   event_day: 2015-10-14
+  event_time: MyString
 
 two:
   event_type: MyString
   title: MyString
   description: MyString
   event_day: 2015-10-14
+  event_time: MyString
