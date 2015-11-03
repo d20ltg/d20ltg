@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151030214219) do
+=======
+ActiveRecord::Schema.define(version: 20151021212745) do
+
+  create_table "announcements", force: true do |t|
+    t.string   "image"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+>>>>>>> daf5190eaab9cf13ba255c5cda6b6dcdc1a51965
 
   create_table "cards", force: true do |t|
     t.datetime "created_at"

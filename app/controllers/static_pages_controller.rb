@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
-    @events = Event.where('event_day > ?', Date.today).order(:event_day).limit(5)
+    @announcements = Announcement.all
+    @upcoming_events = Event.upcoming
   end
 
   def about

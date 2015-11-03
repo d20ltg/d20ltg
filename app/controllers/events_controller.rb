@@ -26,11 +26,12 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @events_by_date = @events.group_by(&:event_day)
+    @upcoming_events = Event.upcoming
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
   def upcoming
-    @events = Event.where('event_day > ?', Date.today).order(:event_day).limit(5)
+    @upcoming_events = Event.upcoming
     render :partial=>'upcoming'
   end
 

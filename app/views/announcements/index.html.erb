@@ -1,0 +1,31 @@
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<h1> Announcements </h1>
+<br />
+<%= link_to "New Announcement", new_announcement_path, class: "btn btn-primary" %>
+<br />
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Download Image</th>
+      <th>&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @announcements.each do |announcement| %>
+      <tr>
+	<td><%= announcement.title %></td>
+	<td><%= announcement.content %></td>
+	<td><%= link_to "Download Announcement", announcement.image_url %></td>
+	<td><%= button_to "Delete", announcement, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you want to delete #{announcement.title}?" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
