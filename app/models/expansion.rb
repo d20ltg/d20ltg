@@ -1,4 +1,4 @@
 class Expansion < ActiveRecord::Base
 
-  has_many :expansion
+  has_many :cards
 end

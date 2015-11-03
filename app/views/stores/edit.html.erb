@@ -1,0 +1,15 @@
+<h1>Edit Store</h1>
+
+<br>
+<%= semantic_form_for(@store, :html => { :multiport => true }) do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :store_address %>
+    <%= f.input :store_phone %>
+    <%= f.input :store_hours %>
+    <%= f.input :store_email %>
+    <%= f.input :store_description %>
+  <% end %>
+
+  <%= f.action :submit, as: :button, :disable_with => "Saving..." %>
+<% end %>
+<br>

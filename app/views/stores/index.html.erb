@@ -1,0 +1,22 @@
+<h1 class="centered_data">d20 Legendary Tabletop Games!</h1>
+
+<% if @store != nil %>
+
+  <div class="centered_data">
+    <br><br />
+    <br><br />
+    <%= @store.store_address %>
+    <br><br />
+    <%= @store.store_phone %>
+    <br><br />
+    <%= @store.store_hours %>
+    <br><br />
+    <%= @store.store_email %>
+    <br><br />
+    <%= @store.store_description %>
+    <br><br />
+  </div>
+
+<% end %>
+
+<div class="centered_data"><%= link_to "Edit this page!", stores_new_path %>

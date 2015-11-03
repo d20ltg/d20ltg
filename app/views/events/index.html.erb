@@ -13,7 +13,7 @@
     <% if @events_by_date[date] %>
       <ul>
         <% @events_by_date[date].each do |event| %>
-          <li><%= link_to event.title, event, class: "cal-tooltip", data: {:toggle => "tooltip", placement: "right"}, 'data-original-title' => event.description %></li>
+          <li><%= link_to event.title, event, class: "cal-tooltip", data: {:toggle => "tooltip", placement: "right"}, 'data-original-title' => event.tooltip_desc %></li>
         <% end %>
       </ul>
     <% end %>

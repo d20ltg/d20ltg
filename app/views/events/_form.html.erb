@@ -3,6 +3,7 @@
     <%= f.inputs do %>
       <%= f.input :title %>
       <%= f.input :description, :input_html => { :rows => 5 } %>
+      <%= f.input :event_time %>
       <%= f.input :event_day, :as => :date_picker, :input_html => {:id => "day_picked"} %>
       <%= f.input :event_type %>
     <% end %>

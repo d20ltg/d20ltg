@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require ckeditor-jquery
 //= require jquery-ui/datepicker
 //= require bxslider
 //= require turbolinks
@@ -28,7 +29,9 @@ $(document).ready(function() {
 
   $('.cal-tooltip').tooltip();
 
-      
+  $('.ckeditor').ckeditor({
+      // optional config
+  });
 });
 
 $(document).on("ready page:change", function() {

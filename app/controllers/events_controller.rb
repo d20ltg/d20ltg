@@ -21,6 +21,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @store = Store.first
   end
 
   def index
