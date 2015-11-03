@@ -63,6 +63,7 @@ Rails.application.routes.draw do
   resources :announcements, only: [:index, :new, :create, :destroy]
   resources :events
   resources :stores
+  resources :expansions
 
 
   # The priority is based upon order of creation: first created -> highest priority.
