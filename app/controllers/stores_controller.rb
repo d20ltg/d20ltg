@@ -13,7 +13,7 @@ class StoresController < ApplicationController
   end
 
   def create
-    @store = Store.create(event_params)
+    @store = Store.create(store_params)
     redirect_to stores_path
   end
 
@@ -35,7 +35,7 @@ class StoresController < ApplicationController
 
   private
 
-    def Store_params
+    def store_params
       params.require(:store).permit!
     end
 end
