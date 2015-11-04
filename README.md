@@ -115,6 +115,16 @@ Open each file and fix the merge conflicts, then save and use `git add` to mark
 the file as fixed. Once all conflicts are fixed, use `git commit` to finish the
 merge.
 
+To Log the Servers
+  >heroku apps
+   === Collaborated Apps
+   d20ltg          brian@thecodesmith.com
+   d20ltg-staging  brian@thecodesmith.com
+Staging
+  >heroku logs --app d20ltg-staging
+Live
+  >heroku logs --app d20ltg
+  
 ## Deployment
 
 The `master` branch represents the production code. Heroku detects pushes to the
