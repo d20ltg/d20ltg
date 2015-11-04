@@ -7,26 +7,11 @@ Rails.application.routes.draw do
   get 'stores/show'
   get 'stores/index'
 
-  get 'new/edit'
-
-  get 'new/create'
-
-  get 'new/update'
-
-  get 'new/show'
-
-  get 'new/index'
-
   get 'expansions/new'
-
   get 'expansions/edit'
-
   get 'expansions/create'
-
   get 'expansions/update'
-
   get 'expansions/show'
-
   get 'expansions/index'
 
   get 'events/index'

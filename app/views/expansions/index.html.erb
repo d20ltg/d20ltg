@@ -1,2 +1,14 @@
-<h1>Expansions#index</h1>
-<p>Find me in app/views/expansions/index.html.erb</p>
+<h1>Magic Sets</h1>
+
+<% if @expansions != nil %>
+  <% @expansions.each do |expac| %>
+    <%= expac.set_name %>
+    <br>
+    <%= link_to 'edit', edit_expansion_path(expac.id) %>
+    <br><br />
+  <% end %>
+<% end %>
+
+<%= link_to 'New Expansion', expansions_new_path %>
+
+

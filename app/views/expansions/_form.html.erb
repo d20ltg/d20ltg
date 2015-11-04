@@ -1,0 +1,10 @@
+<br>
+  <%= semantic_form_for(@expansion, :html => { :multiport => true }) do |f| %>
+    <%= f.inputs do %>
+      <%= f.input :set_name %>
+    <% end %>
+
+    <%= f.action :submit, as: :button, :disable_with => "Saving..." %>
+  <% end %>
+<br>
+

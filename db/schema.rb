@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103030727) do
+ActiveRecord::Schema.define(version: 20151103221733) do
 
   create_table "announcements", force: true do |t|
     t.string   "image"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20151103030727) do
     t.string   "event_time"
   end
 
-  create_table "exapnsions", force: true do |t|
+  create_table "expansions", force: true do |t|
     t.string   "set_name"
     t.datetime "created_at"
     t.datetime "updated_at"

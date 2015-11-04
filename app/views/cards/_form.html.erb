@@ -3,6 +3,7 @@
     <%= f.inputs do %>
       <%= f.input :name %>
       <%= f.input :card_type %>
+      <%= f.input :expansion_id, :as => :select, :collection => Hash[Expansion.all.map { |expac| [expac.set_name, expac.id] }] %>
      
     <% end %>
 
