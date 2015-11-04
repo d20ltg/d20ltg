@@ -1,3 +1,17 @@
+<%
+links_left =
+  [ { :name => "Home", :dest => static_pages_home_path }, 
+   { :name => "Schedule", :dest => events_path },
+   { :name => "About", :dest => stores_path } ]
+
+links_right =
+  [ { :name => "Magic", :dest => expansions_path }, 
+   { :name => "Comics", :dest => static_pages_comics_path },
+   { :name => "Cards", :dest => cards_path } ]
+
+title = "d20 Legendary Tabletop Games"
+%>
+
 <div class="pageheader">
   <h1><medium>D20 Legendary Tabletop Games</medium></h1>
 </div>
@@ -14,14 +28,21 @@
       <div class="navbar-collapse collapse">
 	      <!--<ul class="nav nav-tabs navbar-fixed-top">-->
 	<ul class="nav navbar-nav">
-	  <li role="presentation"><%= link_to "Home", static_pages_home_path %></li>
-	  <li role="presentation"><%= link_to "Schedule", events_path %></li>
-	  <li role="presentation"><%= link_to "Tabletop Games", static_pages_tabletop_path %></li>
-	  <li role="presentation"><%= link_to "Magic", expansions_path %></li>
-	  <li role="presentation"><%= link_to "Cards", cards_path %></li>
-	  <li role="presentation"><%= link_to "Comics", static_pages_comics_path %></li>
-    <li role="presentation"><%= link_to "About", stores_path %></li>
-	  <!--<li role="presentation"><%= link_to "Admin Login", static_pages_login_path %></li>-->
+
+<% links_left.each { |link| %>
+<li role="presentation" class="navbar-left"><%= link_to link[:name], link[:dest] %></li>
+<% } %>
+
+    <li class="logo">(d20 logo)</li>
+
+<% links_right.each { |link| %>
+<li role="presentation" class="navbar-right"><%= link_to link[:name], link[:dest] %></li>
+<% } %>
+
+<!--
+	  <li role="presentation" class="navbar-left"><%= link_to "Tabletop Games", static_pages_tabletop_path %></li>
+	  <li role="presentation"><%= link_to "Admin Login", static_pages_login_path %></li>
+-->
 	</ul>
     </div>
   </div>

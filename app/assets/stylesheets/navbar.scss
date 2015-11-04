@@ -25,3 +25,12 @@ body {
 .navbar-toggle {
   float: left;
 }
+
+
+.navbar .navbar-left {
+  border: 2px dotted green;
+}
+
+.navbar .navbar-right {
+  border: 2px dotted blue;
+}
