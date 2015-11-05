@@ -4,14 +4,16 @@ class CardsControllerTest < ActionController::TestCase
 
   def setup
     @card = cards(:one)
+    @expansion = expansions(:one)
   end
 
   def teardown
     @card = nil
+    @expansion = nil
   end
 
   test "should get index" do
-    get :index
+    get :index, :expansion => @expansion.id
     assert_response :success
   end
 
