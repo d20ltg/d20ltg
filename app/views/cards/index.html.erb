@@ -1,11 +1,12 @@
 <h1>Cards</h1>
+<h2 class="centered_data"><%= @expansion.set_name %></h2>
+<br><br />
 
 <table class="table">
   <thead>
     <tr>
       <th>Card Name</th>
       <th>Card Type</th>
-      <th>Expansion</th>
     </tr>
   </thead>
   <tbody>
@@ -13,7 +14,6 @@
       <tr>
         <td><%= card.name %></td>
         <td><%= card.card_type %></td>
-        <td><%= card.expansion %></td>
         <td><%= link_to "Edit", edit_card_path(card.id) %></td>
       <tr>
     <% end %>

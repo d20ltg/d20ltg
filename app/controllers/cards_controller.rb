@@ -1,6 +1,8 @@
 class CardsController < ApplicationController
+  
   def index
-    @cards = Card.all
+    @expansion = Expansion.find(params[:expansion])
+    @cards = Card.where("expansion_id like ?", @expansion.id)
   end
 
   def show
