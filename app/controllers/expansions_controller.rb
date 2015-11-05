@@ -9,8 +9,13 @@ class ExpansionsController < ApplicationController
   end
 
   def create
-    @expansion = Expansion.create(expansion_params)
-    redirect_to expansions_path
+    @expansion = Expansion.new(expansion_params)
+
+    if @expansion.save
+      redirect_to expansions_path
+    else
+      render "new"
+    end
   end
 
   def update

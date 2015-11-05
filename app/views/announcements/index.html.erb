@@ -13,7 +13,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Content</th>
       <th>Download Image</th>
       <th>&nbsp;</th>
     </tr>
@@ -22,7 +21,6 @@
     <% @announcements.each do |announcement| %>
       <tr>
 	<td><%= announcement.title %></td>
-	<td><%= announcement.content %></td>
 	<td><%= link_to "Download Announcement", announcement.image_url %></td>
 	<td><%= button_to "Delete", announcement, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you want to delete #{announcement.title}?" %></td>
       </tr>
