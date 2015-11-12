@@ -1,18 +1,21 @@
-<h1>RecurringEvents#show</h1>
-<p>Find me in app/views/recurring_events/show.html.erb</p>
-
-<div class="centered_data">
+<div>
   <h1><%= @event.title %></h1>
-  <br><br />
-  <%= @event.event_time %>
-  <br><br />
-  <%= @event.description %>
-  <br><br />
-  <h2>Location:</h2>
-  <br><br />
-  <%= @store.store_address %>
-  <br>
-  <%= @store.store_phone %>
-  <br><br />
-  <%= link_to 'Edit Event', edit_event_path %>
+  <h4><em>Recurring Event</em></h4>
+
+  <div>
+    Day of the Week: <%= @event.day %>
+  </div>
+  <div>
+    Time: <%= @event.event_time %>
+  </div>
+  <div>
+    Type: <%= @event.event_type %>
+  </div>
+  <div>
+    Description: <%= @event.description %>
+  </div>
+
+  <%= link_to 'Edit Event', edit_recurring_event_path %>
+
+  <%= render partial: 'stores/location' %>
 </div>

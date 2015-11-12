@@ -1,0 +1,5 @@
+<h1>Recurring Events</h1>
+
+<% @events.each do |event| %>
+  <h2><%= link_to event.title, event %></h2>
+<% end %>

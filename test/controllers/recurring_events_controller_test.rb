@@ -21,12 +21,12 @@ class RecurringEventsControllerTest < ActionController::TestCase
   end
 
   test "should get create" do
-    get :create, event: {'title' => 'Weekly draft', 'day' => 2}
+    get :create, recurring_event: {'title' => 'Weekly draft', 'day' => 2}
     assert_redirected_to recurring_events_path
   end
 
   test "should get update" do
-    get :update, id: @event.id, event: {'day' => 5}
+    get :update, id: @event.id, recurring_event: {'day' => 5}
     assert_redirected_to recurring_events_path
   end
 

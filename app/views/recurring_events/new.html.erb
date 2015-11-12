@@ -1,17 +1,5 @@
-<h1>RecurringEvents#new</h1>
-<p>Find me in app/views/recurring_events/new.html.erb</p>
+<h1>Create a New Recurring Event</h1>
 
-<form>
-  <label for="title">Title</label>
-  <input type="text" name="title">
+<%= render 'form' %>
 
-  <input type="radio" name="day" value="0">Sunday
-  <input type="radio" name="day" value="1">Monday
-  <input type="radio" name="day" value="2">Tuesday
-  <input type="radio" name="day" value="3">Wednesday
-  <input type="radio" name="day" value="4">Thursday
-  <input type="radio" name="day" value="5">Friday
-  <input type="radio" name="day" value="6">Saturday
-
-  <input type="submit" value="Create">
-</form>
+<%= link_to 'View All Recurring Events', recurring_events_path %>

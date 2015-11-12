@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   get 'recurring_events/new'
   get 'recurring_events/edit'
-  get 'recurring_events/create'
+  post 'recurring_events/create'
   get 'recurring_events/update'
   get 'recurring_events/delete'
   get 'recurring_events/show'

@@ -34,6 +34,6 @@ class RecurringEventsController < ApplicationController
   private
 
     def event_params
-      params.require(:event).permit!
+      params.require(:recurring_event).permit!
     end
 end
