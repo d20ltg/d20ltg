@@ -14,4 +14,34 @@ class RecurringEvent < ActiveRecord::Base
     t_descrip << "\n"
     t_descrip << self.event_time
   end
+
+  def event
+    Event.new(
+      title: title,
+      description: description,
+      event_type: event_type,
+      event_time: event_time
+    )
+  end
+
+  def self.upcoming
+    today = Date.today.wday
+    upcoming = self.all.group_by(&:day)
+    events = Array.new
+
+    (0..6).each do |i|
+      day = (today + i) % 7
+      date = Date.today + i
+      if upcoming[day]
+        upcoming[day].each do |event|
+          new_event = event.event
+          new_event.event_day = date
+          events << new_event
+        end
+      end
+    end
+
+    events
+  end
+
 end
