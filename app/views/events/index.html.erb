@@ -10,14 +10,21 @@
 
   <%= calendar @date do |date| %>
     <%= date.day %>
-    <% if @events_by_date[date] %>
-      <ul>
+    <ul>
+      <% if @events_by_date[date] %>
         <% @events_by_date[date].each do |event| %>
           <li><%= link_to event.title, event, class: "cal-tooltip", data: {:toggle => "tooltip", placement: "right"}, 'data-original-title' => event.tooltip_desc %></li>
         <% end %>
-      </ul>
-    <% end %>
+      <% end %>
+
+      <% if @recurring_events[date.wday] %>
+        <% @recurring_events[date.wday].each do |event| %>
+          <li><%= link_to event.title, event, class: "cal-tooltip", data: {:toggle => "tooltip", placement: "right"}, 'data-original-title' => event.tooltip_desc %></li>
+        <% end %>
+      <% end %>
+    </ul>
   <% end %>
+
 </div>
 
 <% if @admin %>
