@@ -1,6 +1,6 @@
 <div>
 
-<%= form_for @event, url: {action: 'create'} do |f| %>
+<%= form_for @event, url: { action: form_action } do |f| %>
 
   <fieldset class="form-group">
     <label>Title</label>
@@ -11,25 +11,25 @@
     <label>Day of the Week</label><br>
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-primary active">
-        <input type="radio" name="day" value="0">Sunday
+        <%= radio_button_tag(:day, 0) %>Sunday
       </label>
       <label class="btn btn-primary">
-        <input type="radio" name="day" value="1">Monday
+        <%= radio_button_tag(:day, 1) %>Monday
       </label>
       <label class="btn btn-primary">
-        <input type="radio" name="day" value="2">Tuesday
+        <%= radio_button_tag(:day, 2) %>Tuesday
       </label>
       <label class="btn btn-primary">
-        <input type="radio" name="day" value="3">Wednesday
+        <%= radio_button_tag(:day, 3) %>Wednesday
       </label>
       <label class="btn btn-primary">
-        <input type="radio" name="day" value="4">Thursday
+        <%= radio_button_tag(:day, 4) %>Thursday
       </label>
       <label class="btn btn-primary">
-        <input type="radio" name="day" value="5">Friday
+        <%= radio_button_tag(:day, 5) %>Friday
       </label>
       <label class="btn btn-primary">
-        <input type="radio" name="day" value="6">Saturday
+        <%= radio_button_tag(:day, 6) %>Saturday
       </label>
     </div>
   </fieldset>
@@ -50,7 +50,7 @@
   </fieldset>
 
   <fieldset class="form-group">
-    <input type="submit" value="Create Recurring Event" class="btn btn-primary">
+    <input type="submit" value="<%= form_action[0].capitalize + form_action.slice(1..-1) %> Recurring Event" class="btn btn-primary">
   </fieldset>
 
 <% end %>

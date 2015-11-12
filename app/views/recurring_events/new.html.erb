@@ -1,5 +1,5 @@
 <h1>Create a New Recurring Event</h1>
 
-<%= render 'form' %>
+<%= render partial: 'form', locals: { form_action: 'create' } %>
 
 <%= link_to 'View All Recurring Events', recurring_events_path %>

@@ -8,7 +8,9 @@ class RecurringEventsController < ApplicationController
   end
 
   def create
-    @event = RecurringEvent.create(event_params)
+    @event = RecurringEvent.new(event_params)
+    @event.day = params[:day].to_i
+    @event.save
     redirect_to recurring_events_path
   end
 
@@ -24,7 +26,11 @@ class RecurringEventsController < ApplicationController
     @store = Store.first
   end
 
-  def delete
+  def destroy
+    if @event = RecurringEvent.find(params[:id])
+      @event.destroy
+      redirect_to recurring_events_path
+    end
   end
 
   def index
