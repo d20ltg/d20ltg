@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105223803) do
+ActiveRecord::Schema.define(version: 20151111223840) do
 
   create_table "announcements", force: true do |t|
     t.string   "image"
-    t.string   "title"
     t.text     "content"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -51,6 +51,16 @@ ActiveRecord::Schema.define(version: 20151105223803) do
     t.integer  "card_id"
     t.integer  "expansion_id"
     t.integer  "card_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recurring_events", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "day"
+    t.string   "event_time"
+    t.string   "event_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

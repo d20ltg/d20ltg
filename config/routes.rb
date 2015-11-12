@@ -21,6 +21,14 @@ Rails.application.routes.draw do
   get 'events/create'
   get 'events/upcoming'
 
+  get 'recurring_events/new'
+  get 'recurring_events/edit'
+  get 'recurring_events/create'
+  get 'recurring_events/update'
+  get 'recurring_events/delete'
+  get 'recurring_events/show'
+  get 'recurring_events/index'
+
   get 'cards/index'
   get 'cards/show'
   get 'cards/new'
@@ -47,6 +55,7 @@ Rails.application.routes.draw do
   resources :cards
   resources :announcements, only: [:index, :new, :create, :destroy]
   resources :events
+  resources :recurring_events
   resources :stores
   resources :expansions
 

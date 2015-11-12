@@ -1,0 +1,18 @@
+<h1>RecurringEvents#show</h1>
+<p>Find me in app/views/recurring_events/show.html.erb</p>
+
+<div class="centered_data">
+  <h1><%= @event.title %></h1>
+  <br><br />
+  <%= @event.event_time %>
+  <br><br />
+  <%= @event.description %>
+  <br><br />
+  <h2>Location:</h2>
+  <br><br />
+  <%= @store.store_address %>
+  <br>
+  <%= @store.store_phone %>
+  <br><br />
+  <%= link_to 'Edit Event', edit_event_path %>
+</div>
