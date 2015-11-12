@@ -30,9 +30,9 @@ class RecurringEventsControllerTest < ActionController::TestCase
     assert_redirected_to recurring_events_path
   end
 
-  test "should get delete" do
-    get :delete, id: @event.id
-    assert_response :success
+  test "should get destroy" do
+    get :destroy, id: @event.id
+    assert_redirected_to recurring_events_path
   end
 
   test "should get show" do
