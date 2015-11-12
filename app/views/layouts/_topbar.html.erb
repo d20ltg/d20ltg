@@ -1,49 +1,50 @@
 <%
+title = "d20 Legendary Tabletop Games"
+
 links_left =
-  [ { :name => "Home", :dest => static_pages_home_path }, 
-   { :name => "Schedule", :dest => events_path },
-   { :name => "About", :dest => stores_path } ]
+  [ { :name => "Home", :dest => static_pages_home_path },
+    { :name => "Schedule", :dest => events_path },
+    { :name => "About", :dest => stores_path } ]
 
 links_right =
-  [ { :name => "Magic", :dest => expansions_path }, 
-   { :name => "Comics", :dest => static_pages_comics_path },
-   { :name => "Cards", :dest => cards_path } ]
+  [ { :name => "Magic", :dest => expansions_path },
+    { :name => "Comics", :dest => static_pages_comics_path },
+    { :name => "Cards", :dest => cards_path } ]
 
-title = "d20 Legendary Tabletop Games"
+# Links that were temporarily removed:
+# { :name => "Tabletop Games", :dest => static_pages_tabletop_path }
+# { :name => "Admin Login", :dest => static_pages_login_path }
 %>
 
-<div class="pageheader">
-  <h1><medium>D20 Legendary Tabletop Games</medium></h1>
-</div>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-inner">
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="nav-container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <button type="button" class="navbar-toggle"
+          data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
-	<span class="icon-bar"></span>
-	<span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
-      
-      <div class="navbar-collapse collapse">
-	      <!--<ul class="nav nav-tabs navbar-fixed-top">-->
-	<ul class="nav navbar-nav">
-
-<% links_left.each { |link| %>
-<li role="presentation" class="navbar-left"><%= link_to link[:name], link[:dest] %></li>
-<% } %>
-
-    <li class="logo">(d20 logo)</li>
-
-<% links_right.each { |link| %>
-<li role="presentation" class="navbar-right"><%= link_to link[:name], link[:dest] %></li>
-<% } %>
-
-<!--
-	  <li role="presentation" class="navbar-left"><%= link_to "Tabletop Games", static_pages_tabletop_path %></li>
-	  <li role="presentation"><%= link_to "Admin Login", static_pages_login_path %></li>
--->
-	</ul>
+      <a class="navbar-brand visible-xs" href="/">[d20 logo goes here] (collapsed)</a>
     </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav pull-left">
+        <% links_left.each {|link| %>
+        <li><%= link_to link[:name], link[:dest] %></li>
+        <% } %>
+      </ul>
+
+      <a class="navbar-brand hidden-xs" href="/">[d20 logo goes here] (uncollapsed)</a>
+
+      <ul class="nav navbar-nav pull-right">
+        <% links_right.each {|link| %>
+        <li><%= link_to link[:name], link[:dest] %></li>
+        <% } %>
+      </ul>
+    </div>
+
   </div>
 </nav>
