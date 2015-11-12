@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+  before_filter :login_required, :except => [:index, :show]
+  before_filter :requires_admin, :only => [:new, :edit, :create, :update]
+
+
   def new
     @event = Event.new
   end

@@ -20,8 +20,10 @@
   <% end %>
 </div>
 
-<div id="buttons" class="col-md-12">
-  <%= link_to "New Event", new_event_path, data: { no_turbolink: true }, class: "btn btn-primary pull-right" %>
-</div>
+<% if @admin %>
+  <div id="buttons" class="col-md-12">
+    <%= link_to "New Event", new_event_path, data: { no_turbolink: true }, class: "btn btn-primary pull-right" %>
+  </div>
+<% end %>
 
 <%= render partial: "events/upcoming" %>

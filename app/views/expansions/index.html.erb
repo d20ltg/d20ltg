@@ -4,11 +4,15 @@
   <% @expansions.each do |expac| %>
     <%= link_to "#{expac.set_name}", {:controller => "cards", :action => "index", :expansion => expac.id} %>
     <br>
-    <%= link_to 'edit', edit_expansion_path(expac.id) %>
+    <% if @admin %>
+      <%= link_to 'edit', edit_expansion_path(expac.id) %>
+    <% end %>
     <br><br />
   <% end %>
 <% end %>
 
-<%= link_to 'New Expansion', expansions_new_path %>
+<% if @admin %>
+  <%= link_to 'New Expansion', expansions_new_path %>
+<% end %>
 
 

@@ -71,8 +71,12 @@ GEM
     json (1.8.3)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    metaclass (0.0.4)
     mime-types (2.6.2)
     minitest (5.8.1)
+    minitest-stub_any_instance (1.0.1)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
     multi_json (1.11.2)
     pg (0.18.3)
     rack (1.5.5)
@@ -148,6 +152,8 @@ DEPENDENCIES
   jbuilder (= 2.3.1)
   jquery-rails (= 3.1.4)
   jquery-ui-rails
+  minitest-stub_any_instance
+  mocha
   pg
   rails (= 4.1.8)
   rails_12factor
