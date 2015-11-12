@@ -12,6 +12,8 @@ gem 'carrierwave',    '0.10.0'
 gem 'rmagick',        '2.15.4'
 gem 'bxslider-rails'
 gem 'ckeditor_rails'
+gem "minitest-stub_any_instance"
+gem 'mocha'
 
 gem 'blueimp-gallery'
 gem 'formtastic'

@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20151111223840) do
 
   create_table "announcements", force: true do |t|
     t.string   "image"
-    t.text     "content"
     t.string   "title"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -79,6 +79,14 @@ ActiveRecord::Schema.define(version: 20151111223840) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "store_hours"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "hashed_password"
+    t.boolean  "admin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

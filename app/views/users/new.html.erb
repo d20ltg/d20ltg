@@ -1,0 +1,12 @@
+<h1>Create an Account</h1>
+
+<div>
+  <%= semantic_form_for(@user, :html => { :multipart => true }) do |f| %>
+    <%= f.inputs do %>
+      <%= f.input :username %>
+      <%= f.input :hashed_password %>
+       
+    <% end %>
+
+    <%= f.action :submit, as: :button, :disable_with => "Saving..." %>
+  <% end %>

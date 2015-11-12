@@ -1,0 +1,14 @@
+<h1>Accounts</h1>
+
+<table class="table">
+  <thead>
+    <th>username</th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.username %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -20,6 +20,13 @@
 	  <li role="presentation"><%= link_to "Magic", expansions_path %></li>
 	  <li role="presentation"><%= link_to "Comics", static_pages_comics_path %></li>
     <li role="presentation"><%= link_to "About", stores_path %></li>
+
+    <% if @admin %>
+      <li role="presentation"><%= link_to "Accounts", users_path %></li>
+      <li role="presentation"><%= link_to "Logout", logout_path %></li>
+    <% else %>
+      <li role="presentation"><%= link_to "Login", login_path %></li>
+    <% end %>
 	  <!--<li role="presentation"><%= link_to "Admin Login", static_pages_login_path %></li>-->
 	</ul>
     </div>

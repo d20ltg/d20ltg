@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :users, :only => [:index, :new, :create, :destroy, :login]
+  get 'user/new'
+  get 'user/index'
+  get 'user/create'
+  get 'user/destroy'
+  get "login", :to => "users#login"
+  get "logout", :to => "users#logout"
+
   get 'stores/new'
   get 'stores/edit'
   get 'stores/create'
@@ -58,7 +66,9 @@ Rails.application.routes.draw do
   resources :stores
   resources :expansions
 
-
+  resources 'sessions', :only => [:new, :create, :destroy]
+  get 'sessions/create'
+  get 'sessions/destroy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
