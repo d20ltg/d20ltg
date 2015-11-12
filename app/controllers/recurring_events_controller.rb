@@ -11,13 +11,21 @@ class RecurringEventsController < ApplicationController
     @event = RecurringEvent.new(event_params)
     @event.day = params[:day].to_i
     @event.save
-    redirect_to recurring_events_path
+
+    if @event.errors.any?
+      render 'new'
+    else
+      redirect_to recurring_events_path
+    end
   end
 
   def update
     @event = RecurringEvent.find(params[:id])
+    @event.day = params[:day].to_i
     if @event.update_attributes(event_params)
       redirect_to recurring_events_path
+    else
+      render 'edit'
     end
   end
 

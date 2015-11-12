@@ -25,7 +25,6 @@ Rails.application.routes.draw do
   get 'recurring_events/edit'
   post 'recurring_events/create'
   get 'recurring_events/update'
-  get 'recurring_events/delete'
   get 'recurring_events/show'
   get 'recurring_events/index'
 

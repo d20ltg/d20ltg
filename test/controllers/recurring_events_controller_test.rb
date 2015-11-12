@@ -3,7 +3,7 @@ require 'test_helper'
 class RecurringEventsControllerTest < ActionController::TestCase
 
   def setup
-    @event = recurring_events(:one)
+    @event = RecurringEvent.create({ title: 'Test Event', day: 3 })
   end
 
   def teardown

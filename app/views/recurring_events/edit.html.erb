@@ -3,6 +3,6 @@
 <%= render partial: 'form', locals: { form_action: 'update' } %>
 
 <%= button_to('Delete This Recurring Event', @event,
-              method: :destroy, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger') %>
+              method: 'delete', data: { confirm: 'Are you sure?' }, class: 'btn btn-danger') %>
 
 <%= link_to 'View All Recurring Events', recurring_events_path %>
