@@ -2,10 +2,10 @@
 
 <% if @expansions != nil %>
   <% @expansions.each do |expac| %>
-    <%= link_to "#{expac.set_name}", {:controller => "cards", :action => "index", :expansion => expac.id} %>
-    <br>
+
+    <%= link_to image_tag(expac.image, height: '200px', width: '200px'), {:controller => "cards", :action => "index", :expansion => expac.id} %>
     <% if @admin %>
-      <%= link_to 'edit', edit_expansion_path(expac.id) %>
+      <%= link_to "edit", edit_expansion_path(expac.id) %>
     <% end %>
     <br><br />
   <% end %>
@@ -14,5 +14,3 @@
 <% if @admin %>
   <%= link_to 'New Expansion', expansions_new_path %>
 <% end %>
-
-
