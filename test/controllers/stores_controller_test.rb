@@ -4,6 +4,7 @@ class StoresControllerTest < ActionController::TestCase
 
   def setup
     @store = stores(:one)
+    ApplicationController.any_instance.stubs(:current_user).returns(users(:one))
   end
 
   def teardown

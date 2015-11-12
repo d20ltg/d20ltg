@@ -4,6 +4,7 @@ class ExpansionsControllerTest < ActionController::TestCase
 
   def setup
     @expansion = expansions(:one)
+    ApplicationController.any_instance.stubs(:current_user).returns(users(:one))
   end
 
   def teardown

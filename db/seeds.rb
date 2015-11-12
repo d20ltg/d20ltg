@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Store.create(
+  store_address: '2207 Fairfax St, Eau Claire, WI 54701',
+  store_phone: '(715) 456-9738',
+  store_email: 'info@d20gamers.com',
+  store_description: "Eau Claire's hometown games",
+  store_hours: '10 am - 8 pm'
+)

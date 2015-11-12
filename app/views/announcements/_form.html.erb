@@ -2,7 +2,6 @@
 <%= semantic_form_for(@announcement, :html => { :multipart => true }) do |f| %>
   <%= f.inputs do %>
     <%= f.input :title %>
-    <%= f.input :content %>
   <% end %>
   <%= f.label :image %>
   <%= f.file_field :image %>

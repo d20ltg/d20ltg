@@ -22,6 +22,8 @@ class AnnouncementsController < ApplicationController
 
   def destroy
     @announcement = Announcement.find(params[:id])
+    @announcement.remove_image!
+    @announcement.save
     @announcement.destroy
     redirect_to announcements_path, notice: "The announcement #{@announcement.title} has been deleted."
   end
@@ -31,6 +33,6 @@ class AnnouncementsController < ApplicationController
 
   private
   def announcement_params
-    params.require(:announcement).permit(:title, :content, :image)
+    params.require(:announcement).permit!
   end
 end

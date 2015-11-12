@@ -1,4 +1,6 @@
 class ExpansionsController < ApplicationController
+  before_filter :login_required, :except => [:index, :show]
+  before_filter :requires_admin, :only => [:new, :edit, :create, :update]
 
   def new
       @expansion = Expansion.new
@@ -9,8 +11,13 @@ class ExpansionsController < ApplicationController
   end
 
   def create
-    @expansion = Expansion.create(expansion_params)
-    redirect_to expansions_path
+    @expansion = Expansion.new(expansion_params)
+
+    if @expansion.save
+      redirect_to expansions_path
+    else
+      render "new"
+    end
   end
 
   def update
