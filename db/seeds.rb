@@ -13,3 +13,8 @@ Store.create(
   store_description: "Eau Claire's hometown games",
   store_hours: '10 am - 8 pm'
 )
+
+User.create(
+  username: 'd20ltg',
+  hashed_password: 'uwec'
+)
