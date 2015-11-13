@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :login_required, :except => [:index, :show, :login]
-  before_filter :requires_admin, :only => [:new, :edit, :create, :update]
+  before_filter :login_required, :except => [:index, :show, :login, :new, :create]
+  before_filter :requires_admin, :only => [:edit, :update]
   
   def new
     @user = User.new
