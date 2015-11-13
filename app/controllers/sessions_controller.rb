@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       #flash[:notice] = "Welcome!"
     else
       #flash[:error] = "Invalid email/password combination."
-      redirect_to new_event_path
+      redirect_to login_path
     end
   end
 
