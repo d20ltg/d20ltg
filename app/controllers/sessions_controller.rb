@@ -4,11 +4,11 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:username], params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to root_url
+      redirect_to root_path
       #flash[:notice] = "Welcome!"
     else
       #flash[:error] = "Invalid email/password combination."
-      #redirect_to non_uwec_login_path
+      redirect_to new_event_path
     end
   end
 

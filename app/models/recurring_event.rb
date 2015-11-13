@@ -10,9 +10,7 @@ class RecurringEvent < ActiveRecord::Base
   default_scope { order(:day, :event_time) }
 
   def tooltip_desc
-    t_descrip = self.description
-    t_descrip << "\n"
-    t_descrip << self.event_time
+    t_descrip = "#{event_time} - #{description}"
   end
 
   def event

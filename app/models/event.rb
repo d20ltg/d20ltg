@@ -1,9 +1,7 @@
 class Event < ActiveRecord::Base
 
   def tooltip_desc
-    t_descrip = self.description
-    t_descrip << "\n"
-    t_descrip << self.event_time
+    t_descrip = "#{event_time} - #{description}"
   end
 
   def self.upcoming
