@@ -13,3 +13,9 @@ Store.create(
   store_description: "Eau Claire's hometown games",
   store_hours: '10 am - 8 pm'
 )
+
+Card.delete_all
+Card.create! id: 1, name: 'Mickey Mantle', color: 'blue'
+Card.create! id: 2, name: 'Hank Aaron', color: 'red'
+Card.create! id: 3, name: 'Nolan Ryan', color: 'gray'
+Card.create! id: 4, name: 'Babe Ruth', color: 'blue'

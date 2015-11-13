@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111223840) do
+ActiveRecord::Schema.define(version: 20151113172344) do
 
   create_table "announcements", force: true do |t|
     t.string   "image"
@@ -45,6 +45,28 @@ ActiveRecord::Schema.define(version: 20151111223840) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+  end
+
+  create_table "order_items", force: true do |t|
+    t.integer  "card_id"
+    t.integer  "order_id"
+    t.decimal  "unit_price",  precision: 12, scale: 3
+    t.integer  "quantity"
+    t.decimal  "total_price", precision: 12, scale: 3
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "order_items", ["card_id"], name: "index_order_items_on_card_id"
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id"
+
+  create_table "orders", force: true do |t|
+    t.decimal  "subtotal",   precision: 12, scale: 3
+    t.decimal  "tax",        precision: 12, scale: 3
+    t.decimal  "total",      precision: 12, scale: 3
+    t.boolean  "completed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "printings", force: true do |t|
