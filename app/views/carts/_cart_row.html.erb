@@ -1,0 +1,36 @@
+<div class="well">
+
+  <div class="row">
+    <div class="col-xs-4">
+      <h4><%= link_to card.name, card %></h4>
+      <div class="card-image well">
+        Card Image
+      </div>
+    </div>
+    <div class="col-xs-8">
+
+      <%= form_for order_item, remote: true do |f| %>
+          <div class="col-xs-4">
+            <span><h4>Unit Price</h4></span>
+            <%= f.number_field :unit_price, value: order_item.unit_price, class: "form-control", min: 0 %>
+          </div>
+          <div class="col-xs-4">
+            <span><h4>Quantity</h4></span>
+            <%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 %>
+            <%= f.hidden_field :card_id, value: card.id %>
+          </div>
+          <div class="col-xs-4">
+            <span><h4>Actions</h4></span>
+            <div class="btn-group">
+              <%= f.submit "Update", class: "btn btn-primary" %>
+              <%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the card '#{order_item.card.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %>
+            </div>
+          </div>
+          <div class="total col-xs-12">
+            <h4 class="text-right">Total Price: <span style="color: green"><%= number_to_currency order_item.total_price %></span></h4>
+          </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

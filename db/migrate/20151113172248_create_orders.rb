@@ -4,7 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.decimal :subtotal, precision: 12, scale: 3
       t.decimal :tax, precision: 12, scale: 3
       t.decimal :total, precision: 12, scale: 3
-      t.string :status
+      t.boolean :completed, default: false
 
       t.timestamps
     end

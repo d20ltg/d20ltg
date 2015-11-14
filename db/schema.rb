@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113172344) do
+ActiveRecord::Schema.define(version: 20151114073054) do
 
   create_table "announcements", force: true do |t|
     t.string   "image"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20151113172344) do
     t.string   "color"
     t.string   "card_type"
     t.integer  "expansion_id"
+    t.integer  "stock",        default: 0
   end
 
   create_table "events", force: true do |t|
@@ -64,7 +65,7 @@ ActiveRecord::Schema.define(version: 20151113172344) do
     t.decimal  "subtotal",   precision: 12, scale: 3
     t.decimal  "tax",        precision: 12, scale: 3
     t.decimal  "total",      precision: 12, scale: 3
-    t.boolean  "completed"
+    t.boolean  "completed",                           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

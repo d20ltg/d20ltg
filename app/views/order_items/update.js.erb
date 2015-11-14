@@ -1,0 +1,3 @@
+$(".cart-text").text("<%= escape_javascript(cart_text) %>")
+$(".cart-text").css("color", "red")
+$(".shopping-cart").html("<%= escape_javascript(render 'carts/shopping_cart') %>")

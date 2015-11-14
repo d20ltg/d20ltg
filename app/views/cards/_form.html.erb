@@ -1,12 +1,16 @@
-<br>
-  <%= semantic_form_for(@card, :html => { :multipart => true }) do |f| %>
+<div>
+  <%= semantic_form_for @card do |f| %>
+
     <%= f.inputs do %>
       <%= f.input :name %>
       <%= f.input :card_type %>
       <%= f.input :expansion_id, :as => :select, :collection => Hash[Expansion.all.map { |expac| [expac.set_name, expac.id] }] %>
-     
+      <%= f.input :stock, :label => "Quantity in Stock" %>
     <% end %>
 
-    <%= f.action :submit, as: :button, :disable_with => "Saving..." %>
+    <%= f.actions do %>
+      <%= f.action :submit, as: :button, :disable_with => "Saving...", :class => "btn btn-primary" %>
+    <% end %>
+
   <% end %>
-<br>
+</div>

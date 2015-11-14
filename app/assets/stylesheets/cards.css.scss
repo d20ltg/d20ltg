@@ -5,3 +5,15 @@
 .inputs {
   color: black;
 }
+
+form, form div {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.actions a {
+  margin-top: 2px;
+  padding-top: 2px;
+}

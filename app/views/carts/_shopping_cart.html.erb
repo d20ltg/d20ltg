@@ -1,0 +1,36 @@
+<div>
+
+<h1>Shopping Cart</h1>
+
+<% if !@order_item.nil? && @order_item.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+    <% @order_item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="buttons">
+  <div class="button-group">
+    <%= link_to "Clear All Items", carts_clear_path, class: "btn btn-primary" %>
+    <%= link_to "Continue Shopping", expansions_path, class: "btn btn-primary" %>
+    <%= link_to "Complete Order", carts_complete_path, class: "btn btn-success" %>
+  </div>
+  <div class="pull-right">
+    <span class="h3">Total: <span class="cart-total"><%= render partial: 'layouts/cart_total' %></span></span>
+  </div>
+</div>
+
+<% if @order_items.size == 0 %>
+  <p class="text-center">
+    There are no items in your cart. Continue browsing cards <%= link_to "here", expansions_path %>.
+  </p>
+<% else %>
+  <% @order_items.each do |order_item| %>
+    <%= render 'carts/cart_row', card: order_item.card, order_item: order_item, show_total: true %>
+  <% end %>
+<% end %>
+
+</div>

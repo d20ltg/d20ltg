@@ -3,8 +3,13 @@ class CardsController < ApplicationController
   before_filter :requires_admin, :only => [:new, :edit, :create, :update]
 
   def index
-    @expansion = Expansion.find(params[:expansion])
-    @cards = Card.where("expansion_id like ?", @expansion.id)
+    if params.has_key?('expansion')
+      @expansion = Expansion.find(params[:expansion])
+      @cards = Card.where("expansion_id like ?", @expansion.id)
+      @order_item = current_order.order_items.new
+    else
+      redirect_to expansions_path
+    end
   end
 
   def show

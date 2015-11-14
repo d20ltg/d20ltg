@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'order_items/create'
+  get 'order_items/update'
+  get 'order_items/destroy'
+
+  get 'carts/show'
+  get 'carts/clear'
+  get 'carts/complete'
+  get 'carts/summary'
+
+  resource :cart, only: [:show, :clear, :complete, :summary]
+  resources :order_items, only: [:create, :update, :destroy]
+
   resources :users, :only => [:index, :new, :create, :destroy, :login]
   get 'user/new'
   get 'user/index'

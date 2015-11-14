@@ -14,8 +14,17 @@ Store.create(
   store_hours: '10 am - 8 pm'
 )
 
+Expansion.delete_all
+Expansion.create! id: 1, set_name: 'Khans of Tarkir'
+
 Card.delete_all
-Card.create! id: 1, name: 'Mickey Mantle', color: 'blue'
-Card.create! id: 2, name: 'Hank Aaron', color: 'red'
-Card.create! id: 3, name: 'Nolan Ryan', color: 'gray'
-Card.create! id: 4, name: 'Babe Ruth', color: 'blue'
+Card.create! id: 1, expansion_id: 1, name: 'Act of Treason', color: 'blue'
+Card.create! id: 2, expansion_id: 1, name: 'Arrow Storm', color: 'red'
+Card.create! id: 3, expansion_id: 1, name: 'Alpine Grizzly', color: 'gray'
+Card.create! id: 4, expansion_id: 1, name: 'Abzan Guide', color: 'blue'
+
+User.create(
+  username: 'admin',
+  hashed_password: 'admin',
+  admin: true
+)
