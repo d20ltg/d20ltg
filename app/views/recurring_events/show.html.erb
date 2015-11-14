@@ -1,0 +1,18 @@
+<div>
+  <h1><%= @event.title %></h1>
+  <h4><em>This is a Recurring Event</em></h4>
+
+  <div class="h3">
+    When: <%= @event.display_day %>s @ <%= @event.event_time %>
+  </div>
+  <div class="h3">
+    Type: <%= @event.event_type %>
+  </div>
+  <div class="well">
+    <%= @event.description %>
+  </div>
+
+  <%= link_to 'Edit This Recurring Event', edit_recurring_event_path %>
+
+  <%= render partial: 'stores/location' %>
+</div>

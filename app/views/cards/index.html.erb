@@ -20,4 +20,6 @@
   </tbody>
 </table>
 
-<%= link_to "New Card", new_card_path %>
+<% if @admin %>
+  <%= link_to "New Card", new_card_path %>
+<% end %>

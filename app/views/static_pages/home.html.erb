@@ -11,9 +11,12 @@
     </ul>
   </div>
 
-  <div class="buttons">
-    <%= link_to "New Announcement", new_announcement_path, class: "btn btn-primary" %>
-  </div>
+
+  <% if @admin %>
+    <div class="buttons">
+      <%= link_to "New Announcement", new_announcement_path, class: "btn btn-primary" %>
+    </div>
+  <% end %>
 
 </div>
 <%= render partial: "events/upcoming_sidebar" %>

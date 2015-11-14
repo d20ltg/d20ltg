@@ -5,6 +5,7 @@ class CardsControllerTest < ActionController::TestCase
   def setup
     @card = cards(:one)
     @expansion = expansions(:one)
+    ApplicationController.any_instance.stubs(:current_user).returns(users(:one))
   end
 
   def teardown

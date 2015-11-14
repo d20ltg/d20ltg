@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+  before_filter :login_required, :except => [:index, :show]
+  before_filter :requires_admin, :only => [:new, :edit, :create, :update]
+
+
   def new
     @event = Event.new
   end
@@ -27,6 +31,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @events_by_date = @events.group_by(&:event_day)
+    @recurring_events = RecurringEvent.all.group_by(&:day)
     @upcoming_events = Event.upcoming
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
