@@ -10,13 +10,17 @@
 
   <body>
     <%= render :partial => 'layouts/topbar' %>
-    <div class="content_wrap">
+    <% if current_page?(root_path) %>
+      <%= yield %>
+    <% else %>
+      <div class="content_wrap">
 
-      <div class="container">
+        <div class="container">
 
-        <%= yield %>
+          <%= yield %>
+        </div>
       </div>
-    </div>
+    <% end %>
 
   </body>
 </html>
