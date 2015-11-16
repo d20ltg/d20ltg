@@ -5,8 +5,8 @@
   <div id="slider-wrapper">
     <ul class="bxslider">
       <% @announcements.each do |announcement| %>
-	      <li class="slide"><%= image_tag(announcement.image) %></li>
-	      <!--<li style="background-image: url(<%= announcement.image %>);"></li>-->
+          <li class="slide"><%= image_tag(announcement.image) %></li>
+          <!--<li style="background-image: url(<%= announcement.image %>);"></li>-->
       <% end %>
     </ul>
   </div>
@@ -23,13 +23,10 @@
 
 <script type="text/javascript">
   $(window).load(function() {
-    $('.bxslider').bxSlider();
-  });
-
-  $('.bxslider').bxSlider({
-    auto: true,
-    autoHover: true,
-    pager: false
-    }
+    $('.bxslider').bxSlider({
+      auto: true,
+      autoHover: true,
+      pager: false
+    });
   });
 </script>

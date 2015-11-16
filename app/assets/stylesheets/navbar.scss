@@ -9,7 +9,10 @@ body {
   left: 0;
   top: 0;
   margin: auto;
+  z-index: -1;
 }
 
 nav li { transition: background-color 0.4s }
 nav li:hover { background-color: #cfc }
+
+nav.pull-right { text-align: right }
