@@ -10,18 +10,28 @@
 
   <%= calendar @date do |date| %>
     <%= date.day %>
-    <% if @events_by_date[date] %>
-      <ul>
+    <ul>
+      <% if @events_by_date[date] %>
         <% @events_by_date[date].each do |event| %>
           <li><%= link_to event.title, event, class: "cal-tooltip", data: {:toggle => "tooltip", placement: "right"}, 'data-original-title' => event.tooltip_desc %></li>
         <% end %>
-      </ul>
-    <% end %>
+      <% end %>
+
+      <% if @recurring_events[date.wday] %>
+        <% @recurring_events[date.wday].each do |event| %>
+          <li><%= link_to event.title, event, class: "cal-tooltip", data: {:toggle => "tooltip", placement: "right"}, 'data-original-title' => event.tooltip_desc %></li>
+        <% end %>
+      <% end %>
+    </ul>
   <% end %>
+
 </div>
 
-<div id="buttons" class="col-md-12">
-  <%= link_to "New Event", new_event_path, data: { no_turbolink: true }, class: "btn btn-primary pull-right" %>
-</div>
+<% if @admin %>
+  <div id="buttons" class="button-group">
+    <%= link_to "New Event", new_event_path, data: { no_turbolink: true }, class: "btn btn-primary" %>
+    <%= link_to "New Recurring Event", new_recurring_event_path, data: { no_turbolink: true }, class: "btn btn-primary" %>
+  </div>
+<% end %>
 
 <%= render partial: "events/upcoming" %>

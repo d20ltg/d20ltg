@@ -1,9 +1,11 @@
 <br>
   <%= semantic_form_for(@expansion, :html => { :multiport => true }) do |f| %>
     <%= f.inputs do %>
-      <%= f.input :set_name %>
+	    <%= f.input :set_name %>
     <% end %>
-
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <br />
     <%= f.action :submit, as: :button, :disable_with => "Saving..." %>
   <% end %>
 <br>

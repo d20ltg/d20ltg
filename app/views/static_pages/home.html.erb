@@ -2,26 +2,23 @@
 
   <h1>Welcome to d20!</h1>
 
-  <div id="wrapper">
+  <div id="slider-wrapper">
     <ul class="bxslider">
       <% @announcements.each do |announcement| %>
-        <li><%= image_tag(announcement.image, height: "300px") %></li>
+	      <li class="slide"><%= image_tag(announcement.image) %></li>
+	      <!--<li style="background-image: url(<%= announcement.image %>);"></li>-->
       <% end %>
     </ul>
+  </div>
 
-    <div id="bx-pager">
-      <% @announcements.each do |announcement| %>
-        <a data-slide-index="<%= announcement.id-1 %>" href=""><%= image_tag(announcement.image, height: '50px', width: '50px') %></a>
-      <% end %>
+
+  <% if @admin %>
+    <div class="buttons">
+      <%= link_to "New Announcement", new_announcement_path, class: "btn btn-primary" %>
     </div>
-  </div>
-
-  <div class="buttons">
-    <%= link_to "New Announcement", new_announcement_path, class: "btn btn-primary" %>
-  </div>
+  <% end %>
 
 </div>
-
 <%= render partial: "events/upcoming_sidebar" %>
 
 <script type="text/javascript">
@@ -30,8 +27,9 @@
   });
 
   $('.bxslider').bxSlider({
-    pagerCustom: '#bx-pager',
     auto: true,
-    autoHover: true
+    autoHover: true,
+    pager: false
+    }
   });
 </script>

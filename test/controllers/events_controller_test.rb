@@ -4,6 +4,7 @@ class EventsControllerTest < ActionController::TestCase
 
   def setup
     @event = events(:one)
+    ApplicationController.any_instance.stubs(:current_user).returns(users(:one))
   end
 
   def teardown
