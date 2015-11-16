@@ -3,8 +3,21 @@ class CardsController < ApplicationController
   before_filter :requires_admin, :only => [:new, :edit, :create, :update]
 
   def index
-    @expansion = Expansion.find(params[:expansion])
-    @cards = Card.where("expansion_id like ?", @expansion.id)
+    if params[:filter]
+      @cards = Card.by_letter(params[:card])
+      @searched = Array.new
+      if @cards.length == 1
+        @searched << @cards[0]
+      else
+        @cards.each do |card|
+          @searched << card
+        end
+      end
+      logger.info("----------------- wat #{@searched.inspect} and AR relation: #{@cards} ---------------------")
+    else
+      @expansion = Expansion.find(params[:expansion])
+      @cards = Card.where("expansion_id like ?", @expansion.id)
+    end
   end
 
   def show
@@ -33,7 +46,7 @@ class CardsController < ApplicationController
 
   private
 
-    def card_params
-      params.require(:card).permit!
-    end
+  def card_params
+    params.require(:card).permit!
+  end
 end

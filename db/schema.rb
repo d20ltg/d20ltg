@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111223840) do
+ActiveRecord::Schema.define(version: 20151113223235) do
 
   create_table "announcements", force: true do |t|
     t.string   "image"
     t.string   "title"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blocks", force: true do |t|
+    t.string   "block_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

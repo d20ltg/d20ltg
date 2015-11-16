@@ -1,0 +1,8 @@
+<%= javascript_tag do %>
+  $(function() {
+    availableCards = <%= Card.all.map{|s| s.name}.to_json.html_safe %>;
+    $('input[name="filter[card]"]').autocomplete({
+      source: availableCards
+    });
+  });
+<% end %>

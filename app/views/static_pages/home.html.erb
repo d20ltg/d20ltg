@@ -1,37 +1,20 @@
 <div class="col-md-9">
+  <%= render :partial => "javascript_autocompletes" %>
 
-  <h1>Welcome to d20!</h1>
+  <%= form_tag cards_path, :method => 'get' do %>
+    <table>
+      <tr>          
+          <td><%= label_tag("filter[card]", "Magic") %></td>
+          <td><%= text_field_tag("filter[card]", nil, :placeholder => "SEARCH") %></td>
+      </tr>
 
-  <div id="wrapper">
-    <ul class="bxslider">
-      <% @announcements.each do |announcement| %>
-        <li><%= image_tag(announcement.image, height: "300px") %></li>
-      <% end %>
-    </ul>
-
-    <div id="bx-pager">
-      <% @announcements.each do |announcement| %>
-        <a data-slide-index="<%= announcement.id-1 %>" href=""><%= image_tag(announcement.image, height: '50px', width: '50px') %></a>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="buttons">
-    <%= link_to "New Announcement", new_announcement_path, class: "btn btn-primary" %>
-  </div>
-
+  		<td><%= submit_tag "Search" %></td></tr>
+    </table>
+  <% end %>
 </div>
 
-<%= render partial: "events/upcoming_sidebar" %>
 
-<script type="text/javascript">
-  $(window).load(function() {
-    $('.bxslider').bxSlider();
-  });
 
-  $('.bxslider').bxSlider({
-    pagerCustom: '#bx-pager',
-    auto: true,
-    autoHover: true
-  });
-</script>
+		<!--<td><= submit_tag("Export to Excel", name:'xls', id:"principal_confirmations_letter_xls") %></td>
+    <td><= submit_tag("View Letter(s)", disabled:true, id:"principal_confirmations_letter_pdf") %></td></tr>-->
+

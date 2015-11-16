@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'blocks/index'
+
+  get 'blocks/show'
+
+  get 'blocks/new'
+
+  get 'blocks/edit'
+
+  get 'blocks/create'
+
   resources :users, :only => [:index, :new, :create, :destroy, :login]
   get 'user/new'
   get 'user/index'
@@ -42,6 +52,7 @@ Rails.application.routes.draw do
   get 'cards/new'
   get 'cards/edit'
   get 'cards/create'
+  get 'cards/search'
 
   get 'announcements/index'
   get 'announcements/open'
