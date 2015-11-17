@@ -5,6 +5,8 @@
     <% end %>
     <%= f.label :image %>
     <%= f.file_field :image %>
+    <%= f.input :block_id, :as => :select, :collection => Hash[Block.all.map { |block| [block.block_name, block.id] }] %>
+
     <br />
     <%= f.action :submit, as: :button, :disable_with => "Saving..." %>
   <% end %>

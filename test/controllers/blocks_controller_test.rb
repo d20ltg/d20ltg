@@ -1,13 +1,23 @@
 require 'test_helper'
-=begin
+
 class BlocksControllerTest < ActionController::TestCase
+
+def setup
+    @block = blocks(:one)
+    ApplicationController.any_instance.stubs(:current_user).returns(users(:one))
+  end
+
+  def teardown
+    @block = nil
+  end
+
   test "should get index" do
     get :index
     assert_response :success
   end
 
   test "should get show" do
-    get :show
+    get :show, id: @block.id
     assert_response :success
   end
 
@@ -17,14 +27,13 @@ class BlocksControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit
+    get :edit, id: @block.id
     assert_response :success
   end
 
   test "should get create" do
-    get :create
-    assert_response :success
+    get :create, block: {'block_name' => 'Demo Block'}
+    assert_redirected_to expansions_path
   end
 
 end
-=end

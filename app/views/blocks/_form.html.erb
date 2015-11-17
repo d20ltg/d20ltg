@@ -1,0 +1,10 @@
+<br>
+  <%= semantic_form_for(@block, :html => { :multipart => true }) do |f| %>
+    <%= f.inputs do %>
+      <%= f.input :block_name %>
+     
+    <% end %>
+
+    <%= f.action :submit, as: :button, :disable_with => "Saving..." %>
+  <% end %>
+<br>

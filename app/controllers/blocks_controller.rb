@@ -1,6 +1,10 @@
 class BlocksController < ApplicationController
   before_filter :login_required 
 
+  def index
+    @blocks = Block.all
+  end
+
   def new
     @block = Block.new
   end
@@ -10,7 +14,7 @@ class BlocksController < ApplicationController
   end
 
   def create
-    @block = Block.new(block_params)
+    @block = Block.create(block_params)
     redirect_to expansions_path 
   end
 

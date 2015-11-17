@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
 
   get 'blocks/index'
-
   get 'blocks/show'
-
   get 'blocks/new'
-
   get 'blocks/edit'
-
   get 'blocks/create'
 
   resources :users, :only => [:index, :new, :create, :destroy, :login]
@@ -75,6 +71,7 @@ Rails.application.routes.draw do
   resources :events
   resources :recurring_events
   resources :stores
+  resources :blocks
   resources :expansions
 
   resources 'sessions', :only => [:new, :create, :destroy]
