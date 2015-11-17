@@ -4,7 +4,7 @@ class CardsController < ApplicationController
 
   def index
     if params[:filter]
-      @cards = Card.by_letter(params[:card])
+      @cards = Card.by_letter(params[:filter][:card])
       @searched = Array.new
       if @cards.length == 1
         @searched << @cards[0]
@@ -13,9 +13,11 @@ class CardsController < ApplicationController
           @searched << card
         end
       end
-      logger.info("----------------- wat #{@searched.inspect} and AR relation: #{@cards} ---------------------")
+      logger.info("----------------- wat #{@searched.inspect} and AR relation: #{@cards} params #{params[:filter][:card]}---------------------")
+      render :search
     else
       @expansion = Expansion.find(params[:expansion])
+      logger.info("--------------------- #{@expansion.inspect} ---------------------")
       @cards = Card.where("expansion_id like ?", @expansion.id)
     end
   end

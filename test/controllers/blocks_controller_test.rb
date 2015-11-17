@@ -1,5 +1,5 @@
 require 'test_helper'
-
+=begin
 class BlocksControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
@@ -27,3 +27,4 @@ class BlocksControllerTest < ActionController::TestCase
   end
 
 end
+=end
