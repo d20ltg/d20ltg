@@ -18,7 +18,7 @@ class CardsController < ApplicationController
     else
       @expansion = Expansion.find(params[:expansion])
       logger.info("--------------------- #{@expansion.inspect} ---------------------")
-      @cards = Card.where("expansion_id like ?", @expansion.id)
+      @cards = Card.where("expansion_id = ?", @expansion.id)
     end
   end
 
