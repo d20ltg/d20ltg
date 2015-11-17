@@ -1,5 +1,34 @@
 <h1>Recurring Events</h1>
 
-<% @events.each do |event| %>
-  <h2><%= link_to event.title, event %></h2>
+<table class="table">
+  <tr class="h4">
+    <th>Event Name</th>
+    <th>Day</th>
+    <th>Time</th>
+    <th>Type</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= link_to event.title, event %></td>
+      <td><%= event.display_day %></td>
+      <td><%= event.event_time %></td>
+      <td><%= event.event_type %></td>
+      <td>
+        <%= link_to 'Edit', edit_recurring_event_path(event.id) %> |
+        <%= link_to 'Delete', event, method: 'delete', data: { confirm: 'Are you sure you want to delete this recurring event?' } %>
+      </td>
+    </tr>
+  <% end %>
+
+<table>
+
+<% if @events.empty? %>
+  <div><em>No recurring events have been created</em></div>
 <% end %>
+
+<div class="button-group">
+  <%= link_to 'Create New Recurring Event', new_recurring_event_path, class: 'btn btn-primary' %>
+  <%= link_to 'View Events Calendar', events_path, class: 'btn btn-primary' %>
+</div>

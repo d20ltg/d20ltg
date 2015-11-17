@@ -4,7 +4,6 @@
   <%= form_tag cards_path, :method => 'get' do %>
     <div class="input-group"> 
       <%= text_field_tag("filter[card]", nil, :placeholder => "SEARCH", class: "form-control") %> 
-      <!--<button class="btn btn-primary"><= submit_tag "Magic" %></button></td>-->
       <span class="input-group-btn">
       <%= button_tag(type: 'submit', class: "btn btn-search btn-secondary") do %>
         Magic 
@@ -19,13 +18,7 @@
   $(".container").css("border-left", "0px");
   $(".container").css("border-right", "0px");
   $(".container").css("border-top", "0px");
-
-  //alert("hello");
-
   </script>
 
 
-
-  <!--<td><= submit_tag("Export to Excel", name:'xls', id:"principal_confirmations_letter_xls") %></td>
-  <td><= submit_tag("View Letter(s)", disabled:true, id:"principal_confirmations_letter_pdf") %></td></tr>-->
 

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :login_required, :except => [:index, :show, :login]
-  before_filter :requires_admin, :only => [:edit, :update, :new, :create]
-  
+  before_filter :requires_admin, :only => [:new, :edit, :create, :update]
+
   def new
     @user = User.new
   end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def logout
-    redirect_to sessions_destroy_path 
+    redirect_to sessions_destroy_path
   end
 
   private

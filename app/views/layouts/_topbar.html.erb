@@ -1,34 +1,33 @@
 <div class="pageheader">
-  <h1><medium>D20 Legendary Tabletop Games</medium></h1>
+  <h1><medium>d20 Legendary Tabletop Games</medium></h1>
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="nav-container">
     <div class="navbar-header">
+
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
-	<span class="icon-bar"></span>
-	<span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
       </button>
-      
-      <div class="navbar-collapse collapse">
-	      <!--<ul class="nav nav-tabs navbar-fixed-top">-->
-	<ul class="nav navbar-nav">
-	  <li role="presentation"><%= link_to "Home", static_pages_home_path %></li>
-	  <li role="presentation"><%= link_to "Schedule", events_path %></li>
-	  <li role="presentation"><%= link_to "Tabletop Games", static_pages_tabletop_path %></li>
-	  <li role="presentation"><%= link_to "Magic", expansions_path %></li>
-	  <li role="presentation"><%= link_to "Comics", static_pages_comics_path %></li>
-    <li role="presentation"><%= link_to "About", stores_path %></li>
 
-    <% if @admin %>
-      <li role="presentation"><%= link_to "Accounts", users_path %></li>
-      <li role="presentation"><%= link_to "Logout", logout_path %></li>
-    <% else %>
-      <li role="presentation"><%= link_to "Login", login_path %></li>
-    <% end %>
-	  <!--<li role="presentation"><%= link_to "Admin Login", static_pages_login_path %></li>-->
-	</ul>
+      <div class="navbar-collapse collapse">
+
+      <ul class="nav navbar-nav">
+        <li role="presentation"><%= link_to "Home", root_url %></li>
+        <li role="presentation"><%= link_to "Schedule", events_path %></li>
+        <li role="presentation"><%= link_to "Tabletop Games", static_pages_tabletop_path %></li>
+        <li role="presentation"><%= link_to "Magic", expansions_path %></li>
+        <li role="presentation"><%= link_to "Comics", static_pages_comics_path %></li>
+        <li role="presentation"><%= link_to "About", stores_path %></li>
+
+        <% if @admin %>
+          <li role="presentation"><%= link_to "Accounts", users_path %></li>
+          <li role="presentation"><%= link_to "Logout", logout_path %></li>
+        <% else %>
+          <li role="presentation"><%= link_to "Login", login_path %></li>
+        <% end %>
     </div>
   </div>
 </nav>
