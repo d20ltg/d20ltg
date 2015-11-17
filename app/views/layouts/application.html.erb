@@ -10,9 +10,6 @@
 
   <body>
     <%= render :partial => 'layouts/topbar' %>
-    <% if current_page?(root_path) %>
-      <%= yield %>
-    <% else %>
       <div class="content_wrap">
 
         <div class="container">
@@ -20,7 +17,6 @@
           <%= yield %>
         </div>
       </div>
-    <% end %>
 
   </body>
 </html>
