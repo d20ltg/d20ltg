@@ -2,16 +2,15 @@
 
 <% if @blocks != nil %>
   <% @blocks.each do |block| %>
-  <% block.expansions.each do |expac| %>
+    <% block.expansions.each do |expac| %>
+      <%= link_to image_tag(expac.image, height: '200px', width: '200px'), {:controller => "cards", :action => "index", :expansion => expac.id} %>
+      <% if @admin %>
+        <%= link_to "edit", edit_expansion_path(expac.id) %>
+      <% end %>
 
-    <%= link_to image_tag(expac.image, height: '200px', width: '200px'), {:controller => "cards", :action => "index", :expansion => expac.id} %>
-    <% if @admin %>
-      <%= link_to "edit", edit_expansion_path(expac.id) %>
     <% end %>
-    
+    <br><br />
   <% end %>
-<% end %>
-<br><br />
 <% end %>
 
 <% if @admin %>
