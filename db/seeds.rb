@@ -16,5 +16,6 @@ Store.create(
 
 User.create(
   username: 'd20ltg',
-  hashed_password: 'uwec'
+  hashed_password: 'uwec',
+  admin: true
 )
