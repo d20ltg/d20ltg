@@ -1,33 +1,59 @@
-<div class="pageheader">
-  <h1><medium>d20 Legendary Tabletop Games</medium></h1>
-</div>
+<%
+title = "d20 Legendary Tabletop Games"
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="nav-container">
+links_left =
+  [ { :name => "Home", :dest => static_pages_home_path },
+    { :name => "Schedule", :dest => events_path },
+    { :name => "About", :dest => stores_path } ]
+
+links_right =
+  [ { :name => "Magic", :dest => expansions_path },
+    { :name => "Comics", :dest => static_pages_comics_path },
+    { :name => "Tabletop Games", :dest => static_pages_tabletop_path } ]
+
+links_admin =
+  [ { :name => "Accounts", :dest => users_path },
+    { :name => "Logout", :dest => logout_path } ]
+
+links_guest =
+  [ { :name => "Login", :dest => login_path } ]
+%>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-inner">
+
     <div class="navbar-header">
-
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <button type="button" class="navbar-toggle"
+          data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <a class="navbar-brand visible-xs" href="/">[d20 logo goes here] (collapsed)</a>
 
-      <div class="navbar-collapse collapse">
-
-      <ul class="nav navbar-nav">
-        <li role="presentation"><%= link_to "Home", root_url %></li>
-        <li role="presentation"><%= link_to "Schedule", events_path %></li>
-        <li role="presentation"><%= link_to "Tabletop Games", static_pages_tabletop_path %></li>
-        <li role="presentation"><%= link_to "Magic", expansions_path %></li>
-        <li role="presentation"><%= link_to "Comics", static_pages_comics_path %></li>
-        <li role="presentation"><%= link_to "About", stores_path %></li>
-
-        <% if @admin %>
-          <li role="presentation"><%= link_to "Accounts", users_path %></li>
-          <li role="presentation"><%= link_to "Logout", logout_path %></li>
-        <% else %>
-          <li role="presentation"><%= link_to "Login", login_path %></li>
-        <% end %>
+      <hr />
     </div>
+
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav pull-left">
+        <% links_left.each {|link| %>
+        <li><%= link_to link[:name], link[:dest] %></li>
+        <% } %>
+
+        <% (@admin ? links_admin : links_guest).each {|link| %>
+        <li><%= link_to link[:name], link[:dest] %></li>
+        <% } %>
+      </ul>
+
+      <a class="navbar-brand hidden-xs" href="/">[d20 logo goes here] (uncollapsed)</a>
+
+      <ul class="nav navbar-nav pull-right">
+        <% links_right.each {|link| %>
+        <li><%= link_to link[:name], link[:dest] %></li>
+        <% } %>
+      </ul>
+    </div>
+
   </div>
 </nav>
