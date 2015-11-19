@@ -5,13 +5,7 @@ class UsersControllerTest < ActionController::TestCase
 
   def setup
     @user = users(:one)
-    #login(username: @user.username, password: @user.hashed_password)
-    #User.authenticate(@user.username, @user.hashed_password)
-    #controller.stub(:current_user) {@user}
-    #@mock_controller = mock("ApplicationController")
-    #@mock_controller.stub(:current_user) {@user}
     ApplicationController.any_instance.stubs(:current_user).returns(users(:one))
-    
   end
 
   def teardown
