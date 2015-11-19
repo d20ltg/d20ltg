@@ -3,6 +3,7 @@ class CardsController < ApplicationController
   before_filter :requires_admin, :only => [:new, :edit, :create, :update]
 
   def index
+    logger.info("master params <><><><><><><><> #{params[:expac_id]}")
     if params[:filter]
       @cards = Card.by_letter(params[:filter][:card])
       @searched = Array.new
@@ -15,6 +16,9 @@ class CardsController < ApplicationController
       end
       logger.info("----------------- wat #{@searched.inspect} and AR relation: #{@cards} params #{params[:filter][:card]}---------------------")
       render :search
+    elsif params[:expac_id]
+      @expansion = Expansion.find(params[:expac_id])
+      @cards = Card.where("expansion_id = ?", @expansion.id)
     else
       @expansion = Expansion.find(params[:expansion])
       logger.info("--------------------- #{@expansion.inspect} ---------------------")
@@ -36,7 +40,8 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.create(card_params)
-    redirect_to cards_path
+    expac_id = @card.expansion_id
+    redirect_to "/cards?expac_id=#{expac_id}"
   end
 
   def update
