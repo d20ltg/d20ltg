@@ -2,6 +2,8 @@
 
 <% if @blocks != nil %>
   <% @blocks.each do |block| %>
+    <h2><% block.block_name %></h2>
+    <br>
     <% block.expansions.each do |expac| %>
       <%= link_to image_tag(expac.image, height: '200px', width: '200px'), {:controller => "cards", :action => "index", :expansion => expac.id} %>
       <% if @admin %>
