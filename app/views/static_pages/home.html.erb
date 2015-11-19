@@ -1,40 +1,24 @@
-<div class="col-md-9">
+<div class="search">
+  <%= render :partial => "javascript_autocompletes" %>
 
-  <h1>Welcome to d20!</h1>
-
-  <div id="wrapper">
-    <ul class="bxslider">
-      <% @announcements.each do |announcement| %>
-        <li><%= image_tag(announcement.image, height: "300px") %></li>
+  <%= form_tag cards_path, :method => 'get' do %>
+    <div class="input-group"> 
+      <%= text_field_tag("filter[card]", nil, :placeholder => "SEARCH", class: "form-control") %> 
+      <span class="input-group-btn">
+      <%= button_tag(type: 'submit', class: "btn btn-search btn-secondary") do %>
+        Magic 
       <% end %>
-    </ul>
-
-    <div id="bx-pager">
-      <% @announcements.each do |announcement| %>
-        <a data-slide-index="<%= announcement.id-1 %>" href=""><%= image_tag(announcement.image, height: '50px', width: '50px') %></a>
-      <% end %>
-    </div>
+      </span>
+      </div>
+  <% end %>
   </div>
 
+  <script>
+  $(".container").css("background", "transparent");
+  $(".container").css("border-left", "0px");
+  $(".container").css("border-right", "0px");
+  $(".container").css("border-top", "0px");
+  </script>
 
-  <% if @admin %>
-    <div class="buttons">
-      <%= link_to "New Announcement", new_announcement_path, class: "btn btn-primary" %>
-    </div>
-  <% end %>
 
-</div>
 
-<%= render partial: "events/upcoming_sidebar" %>
-
-<script type="text/javascript">
-  $(window).load(function() {
-    $('.bxslider').bxSlider();
-  });
-
-  $('.bxslider').bxSlider({
-    pagerCustom: '#bx-pager',
-    auto: true,
-    autoHover: true
-  });
-</script>

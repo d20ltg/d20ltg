@@ -33,6 +33,7 @@ class ExpansionsController < ApplicationController
 
   def index
     @expansions = Expansion.all
+    @blocks = Block.all
   end
 
   private

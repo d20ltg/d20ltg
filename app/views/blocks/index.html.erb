@@ -1,0 +1,21 @@
+<h1>Blocks</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Block Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @blocks.each do |block| %>
+      <tr>
+        <td><%= block.block_name %></td>
+        <td><%= link_to "Edit", edit_block_path(block.id) %></td>
+      <tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if @admin %>
+  <%= link_to "New Block", new_block_path %>
+<% end %>

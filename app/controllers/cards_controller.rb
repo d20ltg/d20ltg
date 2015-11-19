@@ -3,12 +3,26 @@ class CardsController < ApplicationController
   before_filter :requires_admin, :only => [:new, :edit, :create, :update]
 
   def index
-    if params.has_key?('expansion')
-      @expansion = Expansion.find(params[:expansion])
-      @cards = Card.where("expansion_id like ?", @expansion.id)
-      @order_item = current_order.order_items.new
+    logger.info("master params <><><><><><><><> #{params[:expac_id]}")
+    if params[:filter]
+      @cards = Card.by_letter(params[:filter][:card])
+      @searched = Array.new
+      if @cards.length == 1
+        @searched << @cards[0]
+      else
+        @cards.each do |card|
+          @searched << card
+        end
+      end
+      logger.info("----------------- wat #{@searched.inspect} and AR relation: #{@cards} params #{params[:filter][:card]}---------------------")
+      render :search
+    elsif params[:expac_id]
+      @expansion = Expansion.find(params[:expac_id])
+      @cards = Card.where("expansion_id = ?", @expansion.id)
     else
-      redirect_to expansions_path
+      @expansion = Expansion.find(params[:expansion])
+      logger.info("--------------------- #{@expansion.inspect} ---------------------")
+      @cards = Card.where("expansion_id = ?", @expansion.id)
     end
   end
 
@@ -26,7 +40,8 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.create(card_params)
-    redirect_to cards_path
+    expac_id = @card.expansion_id
+    redirect_to "/cards?expac_id=#{expac_id}"
   end
 
   def update
@@ -38,7 +53,7 @@ class CardsController < ApplicationController
 
   private
 
-    def card_params
-      params.require(:card).permit!
-    end
+  def card_params
+    params.require(:card).permit!
+  end
 end

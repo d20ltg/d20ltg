@@ -1,5 +1,23 @@
 <h1>Order Summary</h1>
 
-<% current_order.order_items.each do |item| %>
-  <p><%= item.card.name %> <%= item.quantity %></p>
-<% end %>
+<table class="table table-hover">
+  <tr>
+    <td>Card</td>
+    <td>Quantity</td>
+    <td>Price Each</td>
+    <td>Total</td>
+  </tr>
+
+  <% current_order.order_items.each do |item| %>
+    <tr>
+      <td><%= item.card.name %></td>
+      <td><%= item.quantity %></td>
+      <td><%= item.unit_price %></td>
+      <td><%= item.total_price %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="pull-right">
+  <span class="h3">Total: <%= current_order.total %></span>
+</div>

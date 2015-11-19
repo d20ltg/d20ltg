@@ -4,10 +4,10 @@ one:
   subtotal: 9.99
   tax: 9.99
   total: 9.99
-  status: MyString
+  completed: false
 
 two:
   subtotal: 9.99
   tax: 9.99
   total: 9.99
-  status: MyString
+  completed: false

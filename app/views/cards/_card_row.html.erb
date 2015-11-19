@@ -2,7 +2,9 @@
   <td class="name"><%= card.name %></td>
   <td class="type"><%= card.card_type %></td>
   <td class="actions text-right">
-    <%= link_to "Edit", edit_card_path(card.id) %>
+    <% if @admin %>
+      <%= link_to "Edit", edit_card_path(card.id) %>
+    <% end %>
 
     <%= form_for order_item, remote: true, html: { class: "form-inline" } do |f| %>
       <%= f.hidden_field :card_id, value: card.id %>

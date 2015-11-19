@@ -1,0 +1,24 @@
+<h1>Cards</h1>
+<br><br />
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Card Name</th>
+      <th>Card Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @searched.each do |card| %>
+      <tr>
+        <td><%= card.name %></td>
+        <td><%= card.card_type %></td>
+        <td><%= link_to "Edit", edit_card_path(card.id) %></td>
+      <tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if @admin %>
+  <%= link_to "New Card", new_card_path %>
+<% end %>

@@ -6,7 +6,6 @@ class Event < ActiveRecord::Base
 
   def self.upcoming
     events = self.where('event_day > ?', Date.today).order(:event_day).limit(5)
-    events += RecurringEvent.upcoming
   end
 
 end
