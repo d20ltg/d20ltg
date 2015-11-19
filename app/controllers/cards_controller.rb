@@ -47,7 +47,7 @@ class CardsController < ApplicationController
   def update
     @card = Card.find(params[:id])
     if @card.update_attributes(card_params)
-      redirect_to cards_path
+      redirect_to "/cards?expac_id=#{expac_id}"
     end
   end
 
