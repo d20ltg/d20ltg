@@ -14,7 +14,9 @@
       <tr>
         <td><%= card.name %></td>
         <td><%= card.card_type %></td>
-        <td><%= link_to "Edit", edit_card_path(card.id) %></td>
+        <% if @admin %>
+            <td><%= link_to "Edit", edit_card_path(card.id) %></td>
+        <% end %>
       <tr>
     <% end %>
   </tbody>

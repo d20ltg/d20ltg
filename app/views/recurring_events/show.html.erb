@@ -12,7 +12,9 @@
     <%= @event.description %>
   </div>
 
-  <%= link_to 'Edit This Recurring Event', edit_recurring_event_path %>
+  <% if @admin %>
+    <%= link_to 'Edit This Recurring Event', edit_recurring_event_path, class: "btn btn-primary" %>
+  <% end %>
 
   <%= render partial: 'stores/location' %>
 </div>
