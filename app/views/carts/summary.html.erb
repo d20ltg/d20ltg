@@ -2,22 +2,22 @@
 
 <table class="table table-hover">
   <tr>
-    <td>Card</td>
-    <td>Quantity</td>
-    <td>Price Each</td>
-    <td>Total</td>
+    <th>Card</th>
+    <th class="text-right">Price (each)</th>
+    <th class="text-right">Quantity</th>
+    <th class="text-right">Total</th>
   </tr>
 
-  <% current_order.order_items.each do |item| %>
+  <% @order.order_items.each do |item| %>
     <tr>
       <td><%= item.card.name %></td>
-      <td><%= item.quantity %></td>
-      <td><%= item.unit_price %></td>
-      <td><%= item.total_price %></td>
+      <td class="text-right"><%= number_to_currency(item.unit_price) %></td>
+      <td class="text-right"><%= item.quantity %></td>
+      <td class="text-right"><%= number_to_currency(item.total_price) %></td>
     </tr>
   <% end %>
 </table>
 
 <div class="pull-right">
-  <span class="h3">Total: <%= current_order.total %></span>
+  <span class="h3">Total: <%= number_to_currency(@order.subtotal) %></span>
 </div>

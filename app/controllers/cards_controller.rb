@@ -4,6 +4,9 @@ class CardsController < ApplicationController
 
   def index
     logger.info("master params <><><><><><><><> #{params[:expac_id]}")
+
+    @order_item = current_order.order_items.new
+
     if params[:filter]
       @cards = Card.by_letter(params[:filter][:card])
       @searched = Array.new
@@ -47,7 +50,7 @@ class CardsController < ApplicationController
   def update
     @card = Card.find(params[:id])
     if @card.update_attributes(card_params)
-      redirect_to cards_path
+      redirect_to "/cards?expac_id=#{expac_id}"
     end
   end
 

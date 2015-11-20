@@ -24,7 +24,6 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_order
-  helper_method :cart_text
 
   def current_order
     if !session[:order_id].nil?

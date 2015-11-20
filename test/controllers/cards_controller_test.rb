@@ -33,4 +33,9 @@ class CardsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get create" do
+    get :create, card: {'name' => 'Demo Card'}
+    assert_redirected_to "/cards?expac_id=#{@card.expansion_id}"
+  end
+
 end

@@ -16,12 +16,13 @@ class CartsController < ApplicationController
     current_order.completed = true
     current_order.save
 
+    order_id = session[:order_id]
     session[:order_id] = nil
 
-    redirect_to carts_summary_path
+    redirect_to action: 'summary', order: order_id
   end
 
   def summary
-
+    @order = Order.find(params[:order])
   end
 end

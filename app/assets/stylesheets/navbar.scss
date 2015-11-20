@@ -2,26 +2,17 @@ body {
   padding-top: 40px;
 }
 
-/* Navigation bar */
-.navbar {
-  border-top: 1px solid #7F704F;
-  border-bottom: 1px solid #7F704F;
-  background-color:  #202020;
-  border-color: #585858;
+.navbar-brand.hidden-xs {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  margin: auto;
+  z-index: -1;
 }
 
-/* Navigation links */
-.navbar .navbar-nav > li > a:hover,
-.navbar .navbar-nav > li > a:focus {
-  color: #ff7034;
-  background-color: #202020;
-}
+nav li { transition: background-color 0.4s }
+nav li:hover { background-color: #cfc }
 
-.navbar a {
-  color: #636363;
-}
-
-/* Navigation button */
-.navbar-toggle {
-  float: left;
-}
+nav.pull-right { text-align: right }
