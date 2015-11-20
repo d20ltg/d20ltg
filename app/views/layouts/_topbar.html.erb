@@ -44,14 +44,15 @@ links_guest =
         <% (@admin ? links_admin : links_guest).each do |link| %>
         <li><%= link_to link[:name], link[:dest] %></li>
         <% end %>
-        <% if @admin %>
-        <li role="presentation"><%= link_to render('layouts/cart_text'), carts_show_path, class: "cart-text" %></li>
-        <% end %>
       </ul>
 
       <a class="navbar-brand hidden-xs" href="/">[d20 logo goes here]</a>
 
       <ul class="nav navbar-nav pull-right">
+        <% if @admin %>
+        <li role="presentation"><%= link_to render('layouts/cart_text'), carts_show_path, class: "cart-text" %></li>
+        <% end %>
+
         <% links_right.each {|link| %>
         <li><%= link_to link[:name], link[:dest] %></li>
         <% } %>
