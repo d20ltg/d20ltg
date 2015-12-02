@@ -31,6 +31,7 @@ ruby '2.1.5'
 group :development, :test do
   gem 'sqlite3'
   gem 'spring'
+  gem 'simplecov'
 end
 
 group :production do
