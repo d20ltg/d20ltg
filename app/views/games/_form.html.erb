@@ -1,0 +1,15 @@
+<div>
+  <%= semantic_form_for @game do |f| %>
+
+    <%= f.inputs do %>
+      <%= f.input :name %>
+      <%= f.input :tabletop_game_id, :as => :select, :collection => Hash[TabletopGame.all.map { |ttg| [ttg.set_name, ttg.id] }] %>
+      <%= f.input :stock, :label => "Quantity in Stock" %>
+    <% end %>
+
+    <%= f.actions do %>
+      <%= f.action :submit, as: :button, :disable_with => "Saving...", :class => "btn btn-primary" %>
+    <% end %>
+
+  <% end %>
+</div>
