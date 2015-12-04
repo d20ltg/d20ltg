@@ -39,6 +39,18 @@ Rails.application.routes.draw do
   get 'expansions/show'
   get 'expansions/index'
 
+  get 'tabletop_games/new'
+  get 'tabletop_games/edit'
+  get 'tabletop_games/create'
+  get 'tabletop_games/update'
+  get 'tabletop_games/show'
+  get 'tabletop_games/index'
+
+  get 'games/index'
+  get 'games/edit'
+  get 'games/new'
+  get 'games/show'
+
   get 'events/index'
   get 'events/show'
   get 'events/new'
@@ -88,6 +100,8 @@ Rails.application.routes.draw do
   resources :stores
   resources :blocks
   resources :expansions
+  resources :tabletop_games
+  resources :games
   resources 'sessions', :only => [:new, :create, :destroy]
 
 end
