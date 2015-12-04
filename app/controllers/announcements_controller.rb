@@ -31,6 +31,10 @@ class AnnouncementsController < ApplicationController
   def edit
   end
 
+  def splash_slider
+    @announcements = Announcement.all
+  end
+
   private
   def announcement_params
     params.require(:announcement).permit!

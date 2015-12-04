@@ -170,4 +170,5 @@ DEPENDENCIES
   spring
   sqlite3
   turbolinks (= 2.5.3)
+  tzinfo
   uglifier (= 2.7.2)

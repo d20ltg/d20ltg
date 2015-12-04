@@ -1,21 +1,21 @@
 <%
-title = "d20 Legendary Tabletop Games"
+@title = "d20 Legendary Tabletop Games"
 
-links_left =
-  [ { :name => "Home", :dest => static_pages_home_path },
+@links_left =
+  [ { :name => "Home", :dest => "/" },
     { :name => "Schedule", :dest => events_path },
     { :name => "About", :dest => stores_path } ]
 
-links_right =
+@links_right =
   [ { :name => "Magic", :dest => expansions_path },
     { :name => "Comics", :dest => static_pages_comics_path },
     { :name => "Tabletop Games", :dest => static_pages_tabletop_path } ]
 
-links_admin =
+@links_admin =
   [ { :name => "Accounts", :dest => users_path },
     { :name => "Logout", :dest => logout_path } ]
 
-links_guest =
+@links_guest =
   [ { :name => "Login", :dest => login_path } ]
 %>
 
@@ -30,30 +30,30 @@ links_guest =
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand visible-xs" href="/">[d20 logo goes here]</a>
+      <a class="navbar-brand visible-xs" href="/">Clairemont Comics</a>
 
       <hr />
     </div>
 
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav pull-left">
-        <% links_left.each {|link| %>
+        <% @links_left.each {|link| %>
         <li><%= link_to link[:name], link[:dest] %></li>
         <% } %>
 
-        <% (@admin ? links_admin : links_guest).each do |link| %>
+        <% (@admin ? @links_admin : @links_guest).each do |link| %>
         <li><%= link_to link[:name], link[:dest] %></li>
         <% end %>
       </ul>
 
-      <a class="navbar-brand hidden-xs" href="/">[d20 logo goes here]</a>
+      <a class="navbar-brand hidden-xs" href="/">Clairemont Comics</a>
 
       <ul class="nav navbar-nav pull-right">
         <% if @admin %>
         <li role="presentation"><%= link_to render('layouts/cart_text'), carts_show_path, class: "cart-text" %></li>
         <% end %>
 
-        <% links_right.each {|link| %>
+        <% @links_right.each {|link| %>
         <li><%= link_to link[:name], link[:dest] %></li>
         <% } %>
       </ul>
