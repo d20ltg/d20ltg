@@ -44,6 +44,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.create(game_params)
     ttg_id = @game.tabletop_game_id
+    flash[:success] = "Successfully added a new Game!"
     redirect_to "/games?ttg_id=#{ttg_id}"
   end
 

@@ -14,6 +14,7 @@ class TabletopGamesController < ApplicationController
     @tabletop_game = TabletopGame.new(tabletop_params)
 
     if @tabletop_game.save
+      flash[:success] = "Sucessfully added a new Tabletop Game!"
       redirect_to tabletop_games_path
     else
       render "new"

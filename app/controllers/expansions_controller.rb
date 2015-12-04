@@ -14,6 +14,7 @@ class ExpansionsController < ApplicationController
     @expansion = Expansion.new(expansion_params)
 
     if @expansion.save
+      flash[:success] = "Successfully added a new Expansion!"
       redirect_to expansions_path
     else
       render "new"
