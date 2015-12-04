@@ -14,6 +14,7 @@ gem 'bxslider-rails'
 gem 'ckeditor_rails'
 gem "minitest-stub_any_instance"
 gem 'mocha'
+gem 'tzinfo'
 
 gem 'blueimp-gallery'
 gem 'formtastic'

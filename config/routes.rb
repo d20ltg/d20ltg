@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root to: "static_pages#home"
+  get 'home', :to => "announcements#splash_slider"
 
   get 'order_items/create'
   get 'order_items/update'
