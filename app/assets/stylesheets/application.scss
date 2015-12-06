@@ -31,9 +31,9 @@
 }
 
 .content_wrap {
-  background-image: image-url("Mountain.jpg");
-  background-size: cover;
-  padding-top: 100px;
+  //background-image: image-url("Mountain.jpg");
+  //background-size: cover;
+  padding-top: 50px;
 }
 
 .container {
@@ -45,7 +45,6 @@
   border-left: 1px solid #7F704F;
   border-right: 1px solid #7F704F;
   border-top: 1px solid #7F704F;
-  min-height: 900px;
   background-color: #E8E8E8;
   opacity: 0.85;
 }

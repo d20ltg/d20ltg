@@ -14,6 +14,7 @@ gem 'bxslider-rails'
 gem 'ckeditor_rails'
 gem "minitest-stub_any_instance"
 gem 'mocha'
+gem 'tzinfo'
 
 gem 'blueimp-gallery'
 gem 'formtastic'
@@ -31,6 +32,7 @@ ruby '2.1.5'
 group :development, :test do
   gem 'sqlite3'
   gem 'spring'
+  gem 'simplecov'
 end
 
 group :production do

@@ -1,0 +1,13 @@
+<script>
+$("body").vegas({
+  slides: [
+
+    // <%= @announcements.length %>
+
+    <% @announcements.each {|ann| %>
+       { src: "assets/<%= ann[:image] %>" },
+    <% } %>
+
+  ]
+})
+</script>

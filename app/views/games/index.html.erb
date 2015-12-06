@@ -1,0 +1,21 @@
+<h1>Games</h1>
+<h2 class="centered"><%= @tabletop_game.set_name %></h2>
+<br><br />
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Game Name</th>
+      <th class="text-right">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @games.each do |game| %>
+      <%= render partial: 'game_row', locals: { game: game, order_item: @order_item } %>
+    <% end %>
+  </tbody>
+</table>
+
+<% if @admin %>
+  <%= link_to "Create a New Game", new_game_path, class: "btn btn-primary" %>
+<% end %>

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'comics/destroy'
 
   root to: "static_pages#home"
+  get 'home', :to => "announcements#splash_slider"
 
   get 'order_items/create'
   get 'order_items/update'
@@ -51,6 +52,18 @@ Rails.application.routes.draw do
   get 'expansions/update'
   get 'expansions/show'
   get 'expansions/index'
+
+  get 'tabletop_games/new'
+  get 'tabletop_games/edit'
+  get 'tabletop_games/create'
+  get 'tabletop_games/update'
+  get 'tabletop_games/show'
+  get 'tabletop_games/index'
+
+  get 'games/index'
+  get 'games/edit'
+  get 'games/new'
+  get 'games/show'
 
   get 'events/index'
   get 'events/show'
@@ -101,6 +114,8 @@ Rails.application.routes.draw do
   resources :stores
   resources :blocks
   resources :expansions
+  resources :tabletop_games
+  resources :games
   resources 'sessions', :only => [:new, :create, :destroy]
   resources :comics
   resources :universes

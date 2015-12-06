@@ -67,6 +67,14 @@ ActiveRecord::Schema.define(version: 20151206030529) do
     t.integer  "block_id"
   end
 
+  create_table "games", force: true do |t|
+    t.string   "name"
+    t.integer  "tabletop_game_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "stock",            default: 0
+  end
+
   create_table "order_items", force: true do |t|
     t.integer  "card_id"
     t.integer  "order_id"
@@ -121,6 +129,13 @@ ActiveRecord::Schema.define(version: 20151206030529) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "store_hours"
+  end
+
+  create_table "tabletop_games", force: true do |t|
+    t.string   "set_name"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "universes", force: true do |t|
