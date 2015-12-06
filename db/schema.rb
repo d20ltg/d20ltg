@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117192548) do
+ActiveRecord::Schema.define(version: 20151206030529) do
 
   create_table "announcements", force: true do |t|
     t.string   "image"
@@ -35,6 +35,18 @@ ActiveRecord::Schema.define(version: 20151117192548) do
     t.string   "card_type"
     t.integer  "expansion_id"
     t.integer  "stock",        default: 0
+  end
+
+  create_table "comics", force: true do |t|
+    t.string   "comic_name"
+    t.boolean  "approved"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "universe_id"
+    t.integer  "condition"
+    t.integer  "stock"
+    t.string   "comments"
   end
 
   create_table "events", force: true do |t|
@@ -109,6 +121,13 @@ ActiveRecord::Schema.define(version: 20151117192548) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "store_hours"
+  end
+
+  create_table "universes", force: true do |t|
+    t.string   "universe_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
   end
 
   create_table "users", force: true do |t|

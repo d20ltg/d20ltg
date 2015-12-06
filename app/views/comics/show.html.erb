@@ -1,0 +1,19 @@
+<h1><%= @comic.comic_name %></h1>
+<br><br />
+<%= label_tag "Universe: " %>
+<%= @universe.universe_name %>
+<br><br />
+<%= label_tag "Condition: " %>
+<%= @comic.condition %>
+<br><br />
+<%= label_tag "Store Comments: " %>
+<%= @comic.comments %>
+<br><br />
+<br><br />
+
+<%= link_to "Edit this Comic", edit_comic_path(@comic.id), class: "btn btn-primary" %>
+<br><br />
+<%= link_to "Back to Comics", comics_path, class: "btn btn-primary"%>
+<br><br />
+<%= link_to "Delete", @comic, :confirm => "Are you sure you want to delete this posting?", :method => :delete, class: "btn btn-primary" %></td>
+

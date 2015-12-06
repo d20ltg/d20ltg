@@ -1,0 +1,18 @@
+<div>
+  <%= semantic_form_for @comic do |f| %>
+
+    <%= f.inputs do %>
+      <%= f.input :comic_name %>
+      <%= f.input :universe_id, :as => :select, :collection => Hash[Universe.all.map { |uni| [uni.universe_name, uni.id] }] %>
+      <%= f.input :condition %>
+      <%= f.input :stock, :label => "Quantity in Stock" %>
+      <%= f.input :comments, :as => :text, :input_html => { :rows => 5 } %>
+    <% end %>
+
+    <br><br />
+
+    <fieldset class="form-group">
+      <input type="submit" value="Create Comic" class="btn btn-primary">
+    </fieldset>
+  <% end %>
+</div>
