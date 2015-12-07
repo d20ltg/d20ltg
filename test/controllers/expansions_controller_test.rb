@@ -4,11 +4,13 @@ class ExpansionsControllerTest < ActionController::TestCase
 
   def setup
     @expansion = expansions(:one)
+    @block = blocks(:one)
     ApplicationController.any_instance.stubs(:current_user).returns(users(:one))
   end
 
   def teardown
     @expansion = nil
+    @block = nil
   end
 
   test "should get new" do
@@ -22,7 +24,7 @@ class ExpansionsControllerTest < ActionController::TestCase
   end
 
   test "should get create" do
-    get :create, expansion: {'set_name' => 'Demo Expansion'}
+    get :create, expansion: {set_name: 'Demo Expansion', block_id: 1}
     assert_redirected_to expansions_path
   end
 
