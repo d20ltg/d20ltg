@@ -4,11 +4,12 @@
 
 #store-hours {
   position: absolute;
-  bottom: 40;
-  right: 40;
+  z-index: 30;
+  bottom: 40px;
+  right: 40px;
   border-radius: 10px;
-  border: 2px red;
+  border: 2px solid red;
 
-  background-color: dark-gray;
+  background-color: #666666;
   color: white;
 }
