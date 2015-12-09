@@ -14,6 +14,7 @@ class AnnouncementsController < ApplicationController
     @announcement = Announcement.new(announcement_params)
 
     if @announcement.save
+      flash[:success] = "Successfully added a new Announcement!"
       redirect_to announcements_path, notice: "The announcement #{@announcement.title} has been uploaded."
     else
       render "new"

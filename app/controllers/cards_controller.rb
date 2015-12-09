@@ -44,6 +44,7 @@ class CardsController < ApplicationController
   def create
     @card = Card.create(card_params)
     expac_id = @card.expansion_id
+    flash[:success] = "Successfully added a new Card!"
     redirect_to "/cards?expac_id=#{expac_id}"
   end
 

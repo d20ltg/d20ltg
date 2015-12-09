@@ -1,0 +1,16 @@
+<tr>
+  <td class="name"><%= link_to "#{comic.comic_name}", comic_path(comic.id) %></td>
+  <td class="type"><%= comic.condition %></td>
+  <td class="actions text-right">
+    <% if @admin %>
+      <%= link_to "Edit", edit_comic_path(comic.id) %>
+    <% end %>
+
+    <%= form_for order_item, remote: true, html: { class: "form-inline" } do |f| %>
+      <%= f.hidden_field :comic_id, value: comic.id %>
+      <%= f.hidden_field :quantity, value: 1 %>
+      <%= f.hidden_field :unit_price, value: "0.00" %>
+      <%= f.submit "Add to Cart", class: "btn btn-primary btn-xs", id: "add-to-cart" %>
+    <% end %>
+  </td>
+</tr>

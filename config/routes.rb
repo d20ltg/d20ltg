@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'universes/index'
+  get 'universes/show'
+  get 'universes/edit'
+  get 'universes/create'
+  get 'universes/update'
+
+  get 'comics/index'
+  get 'comics/show'
+  get 'comics/new'
+  get 'comics/edit'
+  get 'comics/create'
+  get 'comics/update'
+  get 'comics/destroy'
+
   root to: "static_pages#home"
   get 'home', :to => "announcements#splash_slider"
 
@@ -82,7 +96,7 @@ Rails.application.routes.draw do
   get 'static_pages/contact'
   get 'static_pages/magic'
   get 'static_pages/tabletop'
-  get 'static_pages/comics'
+  #get 'static_pages/comics'
   get 'static_pages/calendar'
   get 'static_pages/login'
   get 'static_pages/gatherer'
@@ -103,5 +117,7 @@ Rails.application.routes.draw do
   resources :tabletop_games
   resources :games
   resources 'sessions', :only => [:new, :create, :destroy]
+  resources :comics
+  resources :universes
 
 end
