@@ -79,7 +79,7 @@ class MagicApiService
   end
 
   def self.get_query_string(params)
-    params.empty? ? '' : '?' + params.collect { |k, v| "#{k}=#{v}" } .join('&')
+    params.empty? ? '' : '?' + params.collect { |k, v| "#{k}=#{v}" } .join('&').gsub(/ /, '%20')
   end
 
 end
