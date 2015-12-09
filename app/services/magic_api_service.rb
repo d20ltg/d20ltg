@@ -31,9 +31,6 @@ class MagicApiService
 
     image_url = edition ? edition['image_url'] : ''
 
-    puts "Creating card #{params['name']}"
-    puts params
-
     Card.create(
       expansion_id: expansion.id,
       name: params['name'],
