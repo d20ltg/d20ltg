@@ -24,6 +24,7 @@ class TabletopGamesController < ApplicationController
   def update
     @tabletop_game = TabletopGame.find(params[:id])
     if @tabletop_game.update_attributes(tabletop_params)
+      flash[:success] = "Successfully updated the Tabletop Game!"
       redirect_to tabletop_games_path
     end
   end

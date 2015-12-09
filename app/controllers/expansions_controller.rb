@@ -39,6 +39,7 @@ class ExpansionsController < ApplicationController
   def update
     @expansion = Expansion.find(params[:id])
     if @expansion.update_attributes(expansion_params)
+      flash[:success] = "Successfully updated the Expansion!"
       redirect_to expansions_path
     end
   end

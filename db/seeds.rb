@@ -19,11 +19,13 @@ Store.create(
 )
 
 TabletopGame.delete_all
-
 Expansion.delete_all
+Card.delete_all
+Block.delete_all
+Event.delete_all
+
 Expansion.create! id: 1, set_name: 'Khans of Tarkir'
 
-Card.delete_all
 Card.create! id: 1, expansion_id: 1, name: 'Act of Treason', color: 'blue'
 Card.create! id: 2, expansion_id: 1, name: 'Arrow Storm', color: 'red'
 Card.create! id: 3, expansion_id: 1, name: 'Alpine Grizzly', color: 'gray'
