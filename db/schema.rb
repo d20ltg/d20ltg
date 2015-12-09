@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206030529) do
+ActiveRecord::Schema.define(version: 20151209011413) do
 
   create_table "announcements", force: true do |t|
     t.string   "image"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20151206030529) do
     t.string   "card_type"
     t.integer  "expansion_id"
     t.integer  "stock",        default: 0
+    t.string   "image_url"
   end
 
   create_table "comics", force: true do |t|
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 20151206030529) do
     t.datetime "updated_at"
     t.string   "image"
     t.integer  "block_id"
+    t.string   "set_abbreviation"
   end
 
   create_table "games", force: true do |t|
