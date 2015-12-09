@@ -14,7 +14,7 @@ class ExpansionsController < ApplicationController
   def create
     @expansion = Expansion.new(expansion_params)
 
-    if @expansion.save
+    if @expansion.save!
       set_abbr = @expansion.set_abbreviation
       begin
         cards = MagicApiService.get_cards({ :set => set_abbr })
@@ -25,7 +25,9 @@ class ExpansionsController < ApplicationController
           rescue
           end
         end
+        flash[:success] = "Successfully added a new Expansion!"
       rescue
+        flash[:danger] = "There was an error importing the set data."
       end
 
       redirect_to expansions_path

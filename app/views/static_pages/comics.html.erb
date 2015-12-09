@@ -1,1 +1,16 @@
 <h1>Comics</h1>
+
+<p>Looking for a specific comic? Place your order here and we'll let you know when it is in!</p>
+
+<%= form_tag(comics_create_path, :method => :get) %>
+  <table>
+    <tr>
+      <td><%= label_tag("filter[comic]", "Title") %></td>
+      <td><%= text_field_tag("filter[comic]", :nil) %></td>
+    </tr>
+    <tr>
+      <td><%= submit_tag("submit") %></td>
+    </tr>
+  </table>
+<% end %>
+

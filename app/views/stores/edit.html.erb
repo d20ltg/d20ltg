@@ -7,8 +7,10 @@
     <%= f.input :store_phone %>
     <%= f.input :store_hours %>
     <%= f.input :store_email %>
-    <%= f.input :store_description %>
+    <%= f.input :store_description, :as => :text, :input_html => { :rows => 5 } %>
   <% end %>
+
+  <br><br />
 
   <%= f.action :submit, as: :button, :disable_with => "Saving..." %>
 <% end %>

@@ -18,6 +18,8 @@ Store.create(
   store_hours: '10 am - 8 pm'
 )
 
+TabletopGame.delete_all
+
 Expansion.delete_all
 Expansion.create! id: 1, set_name: 'Khans of Tarkir'
 
@@ -201,6 +203,26 @@ Card.create(
   name: 'Jamison As a Friend',
   card_type: 'You will never get Bored',
   expansion_id: 4
+)
+
+TabletopGame.create(
+  set_name: 'Monopoly',
+  image: seed_image('monopoly.jpg')
+)
+
+TabletopGame.create(
+  set_name: 'Settlers of Catan',
+  image: seed_image('settlers.jpg')
+)
+
+Game.create(
+  name: 'Star Wars Monopoly',
+  tabletop_game_id: 0
+)
+
+Game.create(
+  name: 'Star Trek Settlers of Catan',
+  tabletop_game_id: 1
 )
 
 Event.create(

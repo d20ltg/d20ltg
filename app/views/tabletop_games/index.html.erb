@@ -1,0 +1,15 @@
+<h1 class="centered">Tabletop Games</h1>
+
+<% @tabletop_games.each do |ttg| %>
+	<%= link_to image_tag(ttg.image, height: '200px', width: '200px'), {:controller => "games", :action => "index", :tabletop_game => ttg.id} %>
+  <% if @admin %>
+    <%= link_to "edit", edit_tabletop_game_path(ttg.id) %>
+  <% end %>
+
+<% end %>
+
+<br /><br />
+
+<% if @admin %>
+  <%= link_to 'New TabletopGame', tabletop_games_new_path %>
+<% end %>
