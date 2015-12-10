@@ -7,12 +7,15 @@
     <tr>
       <th>Comic Name</th>
       <th>Condition</th>
-      <th class="text-right">Actions</th>
+      <!--<th class="text-right">Actions</th>-->
     </tr>
   </thead>
   <tbody>
     <% @comics.each do |comic| %>
-      <%= render partial: 'comic_row', locals: { comic: comic, order_item: @order_item } %>
+      <tr>
+        <td class="name"><%= link_to "#{comic.comic_name}", comic_path(comic.id) %></td>
+	<td class="type"><%= comic.condition %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>

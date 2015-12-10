@@ -3,5 +3,5 @@ class TabletopGame < ActiveRecord::Base
   has_many :games
 
   validates :set_name, presence: true
-  #validates :image, presence: true
+  validates :image, presence: true
 end

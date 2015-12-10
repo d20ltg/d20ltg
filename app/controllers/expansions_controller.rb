@@ -17,14 +17,22 @@ class ExpansionsController < ApplicationController
     if @expansion.save!
       set_abbr = @expansion.set_abbreviation
       begin
-        cards = MagicApiService.get_cards({ :set => set_abbr })
+        page = 0
+        cards = MagicApiService.get_cards({ :set => set_abbr, :page => page })
 
-        cards.each do |card|
-          begin
-            MagicApiService.create_card_from_hash(@expansion, card)
-          rescue
+        while cards.size > 0 do
+
+          cards.each do |card|
+            begin
+              MagicApiService.create_card_from_hash(@expansion, card)
+            rescue
+            end
           end
+
+          page += 1
+          cards = MagicApiService.get_cards({ :set => set_abbr, :page => page })
         end
+
         flash[:success] = "Successfully added a new Expansion!"
       rescue
         flash[:danger] = "There was an error importing the set data."
@@ -39,6 +47,7 @@ class ExpansionsController < ApplicationController
   def update
     @expansion = Expansion.find(params[:id])
     if @expansion.update_attributes(expansion_params)
+      flash[:success] = "Successfully updated the Expansion!"
       redirect_to expansions_path
     end
   end

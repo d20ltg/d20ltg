@@ -19,6 +19,7 @@ class UniversesController < ApplicationController
     @universe = Universe.new(universe_params)
 
     if @universe.save!
+      flash[:success] = "Successfully added a new Universe!"
       redirect_to universes_path
     else
       render 'new'
@@ -28,6 +29,7 @@ class UniversesController < ApplicationController
   def update
     @universe = Universe.find(params[:id])
     if @universe.update_attributes(universe_params)
+      flash[:success] = "Successfully updated the Universe!"
       redirect_to universes_path
     else
       render 'edit'

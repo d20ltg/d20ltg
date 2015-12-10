@@ -5,8 +5,6 @@ class GamesController < ApplicationController
   def index
     logger.info("master params <><><><><><><><> #{params[:ttg_id]}")
 
-    @order_item = current_order.order_items.new
-
     if params[:filter]
       @games = Game.by_letter(params[:filter][:game])
       @searched = Array.new
@@ -51,6 +49,7 @@ class GamesController < ApplicationController
   def update
     @game = Game.find(params[:id])
     if @game.update_attributes(game_params)
+      flash[:success] = "Successfully updated the Game!"
       ttg_id = @game.tabletop_game_id
       redirect_to "/games?ttg_id=#{ttg_id}"
     end

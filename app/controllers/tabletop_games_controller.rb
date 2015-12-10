@@ -13,10 +13,11 @@ class TabletopGamesController < ApplicationController
   def create
     @tabletop_game = TabletopGame.new(tabletop_params)
 
-    if @tabletop_game.save!
+    if @tabletop_game.save
       flash[:success] = "Sucessfully added a new Tabletop Game!"
       redirect_to tabletop_games_path
     else
+      flash[:error] = "Record invalid, a Tabletop Game needs both a name and an uploaded image"
       render "new"
     end
   end
@@ -24,6 +25,7 @@ class TabletopGamesController < ApplicationController
   def update
     @tabletop_game = TabletopGame.find(params[:id])
     if @tabletop_game.update_attributes(tabletop_params)
+      flash[:success] = "Successfully updated the Tabletop Game!"
       redirect_to tabletop_games_path
     end
   end

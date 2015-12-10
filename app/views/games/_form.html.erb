@@ -3,13 +3,15 @@
 
     <%= f.inputs do %>
       <%= f.input :name %>
+      <br />
       <%= f.input :tabletop_game_id, :as => :select, :collection => Hash[TabletopGame.all.map { |ttg| [ttg.set_name, ttg.id] }] %>
-      <%= f.input :stock, :label => "Quantity in Stock" %>
+      <br />
     <% end %>
+    <br />
 
-    <%= f.actions do %>
-      <%= f.action :submit, as: :button, :disable_with => "Saving...", :class => "btn btn-primary" %>
-    <% end %>
-
+    <fieldset class="form-group">
+      <input type="submit" value="Submit" class="btn btn-primary">
+    </fieldset>
+    <br />
   <% end %>
 </div>

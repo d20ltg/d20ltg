@@ -3,7 +3,6 @@ class Game < ActiveRecord::Base
   belongs_to :tabletop_games
 
   validates :name, presence: true
-  validates :stock, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   scope :game_asc, -> { order("name ASC") }
 
@@ -16,7 +15,6 @@ class Game < ActiveRecord::Base
   after_initialize :init
 
   def init
-    self.stock ||= 0
   end
 
 

@@ -19,6 +19,8 @@ class CartsController < ApplicationController
     order_id = session[:order_id]
     session[:order_id] = nil
 
+    flash[:success] = "Your order has been processed!"
+
     redirect_to action: 'summary', order: order_id
   end
 

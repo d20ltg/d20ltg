@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209011413) do
+ActiveRecord::Schema.define(version: 20151210194256) do
 
   create_table "announcements", force: true do |t|
     t.string   "image"
-    t.text     "content"
     t.string   "title"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20151209011413) do
     t.datetime "updated_at"
     t.integer  "universe_id"
     t.integer  "condition"
-    t.integer  "stock"
     t.string   "comments"
   end
 
@@ -74,7 +73,6 @@ ActiveRecord::Schema.define(version: 20151209011413) do
     t.integer  "tabletop_game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "stock",            default: 0
   end
 
   create_table "order_items", force: true do |t|

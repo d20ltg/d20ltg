@@ -3,8 +3,6 @@ class ComicsController < ApplicationController
   def index
     logger.info("master params <><><><><><><><> #{params[:expac_id]}")
 
-    @order_item = current_order.order_items.new
-
     if params[:filter]
       @cards = Card.by_letter(params[:filter][:card])
       @searched = Array.new
@@ -45,12 +43,14 @@ class ComicsController < ApplicationController
   def create
     @comic = Comic.create(comic_params)
     universe_id = @comic.universe_id
+    flash[:success] = "Successfully added a new Comic!"
     redirect_to "/comics?universe_id=#{universe_id}"
   end
 
   def update
     @comic = Comic.find(comic_params)
     if @comic.update_attributes(comic_params)
+      flash[:success] = "Successfully updated the Comic!"
       redirect_to "/comics?universe_id=#{universe_id}"
     end
   end

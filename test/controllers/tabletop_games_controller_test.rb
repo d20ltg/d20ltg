@@ -22,7 +22,7 @@ class TabletopGamesControllerTest < ActionController::TestCase
   end
 
   test "should get create" do
-    get :create, tabletop_game: {'set_name' => 'Demo Brand'}
+    get :create, tabletop_game: {'set_name' => 'Demo Brand', image: fixture_file_upload('/file/avacyn.jpg', 'image/jpg')}
     assert_redirected_to tabletop_games_path
   end
 

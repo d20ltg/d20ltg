@@ -1,15 +1,15 @@
 <%
-@title = "d20 Legendary Tabletop Games"
+@title = "Clairemont Comics"
 
 @links_left =
   [ { :name => "Home", :dest => "/" },
-    { :name => "Schedule", :dest => events_path },
+    { :name => "Events", :dest => events_path },
     { :name => "About", :dest => stores_path } ]
 
 @links_right =
   [ { :name => "Magic", :dest => expansions_path },
     { :name => "Comics", :dest => universes_path },
-    { :name => "Tabletop Games", :dest => tabletop_games_path } ]
+    { :name => "Tabletop", :dest => tabletop_games_path } ]
 
 @links_admin =
   [ { :name => "Accounts", :dest => users_path },
@@ -23,8 +23,7 @@
   <div class="navbar-inner">
 
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle"
-          data-toggle="collapse" data-target=".navbar-collapse">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -46,8 +45,6 @@
         <% end %>
       </ul>
 
-      <!--<a class="navbar-brand hidden-xs" href="/">Clairemont Comics</a>-->
-
       <ul class="nav navbar-nav pull-right">
         <% if @admin %>
         <li role="presentation"><%= link_to render('layouts/cart_text'), carts_show_path, class: "cart-text" %></li>
@@ -58,10 +55,9 @@
         <% } %>
       </ul>
       <div id="top-logo" class="navbar-brand hidden-xs">
-        <a href="/">Clairemont comics</a>
+	<a href="/">Clairemont Comics</a>
       </div>
     </div>
 
   </div>
 </nav>
-

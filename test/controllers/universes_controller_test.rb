@@ -32,7 +32,8 @@ class UniversesControllerTest < ActionController::TestCase
   end
 
   test "should get create" do
-    get :create, universe: {'universe_name' => 'Demo Universe'}
+    universe = universes(:one)
+    post :create, universe: {universe_name: 'demo uni', image: fixture_file_upload('/file/avacyn.jpg', 'image/jpg')}
     assert_redirected_to universes_path
   end
 
