@@ -42,11 +42,12 @@
   display: block;
   clear:both;
   overflow: hidden;
-  border-left: 1px solid #7F704F;
-  border-right: 1px solid #7F704F;
-  border-top: 1px solid #7F704F;
-  background-color: #E8E8E8;
+  //border-left: 1px solid #7F704F;
+  //border-right: 1px solid #7F704F;
+  //border-top: 1px solid #7F704F;
+  //background-color: #E8E8E8;
   opacity: 0.85;
+  min-height: 750px;
 }
 
 /* styles for the events calendar (see railscasts 213) */
@@ -145,4 +146,11 @@
     float: none;
     margin: 30px;
   }
+}
+
+.bottom_bar {
+  background-color: #E7E7E7;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 0px;
 }

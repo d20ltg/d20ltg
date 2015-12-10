@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20151209011413) do
 
   create_table "announcements", force: true do |t|
     t.string   "image"
-    t.string   "title"
     t.text     "content"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

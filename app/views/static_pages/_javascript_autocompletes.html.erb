@@ -4,5 +4,13 @@
     $('input[name="filter[card]"]').autocomplete({
       source: availableCards
     });
+    availableComics = <%= Comic.all.map{|s| s.comic_name}.to_json.html_safe %>;
+    $('input[name="filter[comic]"]').autocomplete({
+      source: availableComics
+    });
+    availableGames = <%= Game.all.map{|s| s.name}.to_json.html_safe %>;
+    $('input[name="filter[game]"]').autocomplete({
+      source: availableGames
+    });
   });
 <% end %>

@@ -5,30 +5,33 @@
     <div class="input-group"> 
       <%= text_field_tag("filter[card]", nil, :placeholder => "SEARCH", class: "form-control") %> 
       <span class="input-group-btn">
-      <%= button_tag(type: 'submit', class: "btn btn-search btn-secondary") do %>
-        Magic 
-      <% end %>
+        <%= button_tag(type: 'submit', class: "btn btn-search btn-secondary") do %>
+          Magic 
+        <% end %>
+
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="change">Magic
+            <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li>Magic</li>
+            <li>Comic</li>
+            <li>Tabletop</li>
+          </ul>
+        </div>
       </span>
     </div>
   <% end %>
+
+
 </div>
 
-<div class="container" id="home-links">
-  <div><%= link_to "Questions? Contact us!", stores_path %></div>
-  <div>Typical store hours: 10am -- 8pm</div>
-  <div>
-    <a href="https://www.facebook.com/pages/Clairemont-Comics/117718421576761">
-      <%= image_tag("badgefacebook.png", alt: "Find us on Facebook") %>
-      <%# free image from create.net %>
-    </a>
-  </div>
-</div>
 
 <script>
-$(".container").css("background", "transparent");
-$(".container").css("border-left", "0px");
-$(".container").css("border-right", "0px");
-$(".container").css("border-top", "0px");
+  /*$(".container").css("background", "transparent");
+  $(".container").css("border-left", "0px");
+  $(".container").css("border-right", "0px");
+  $(".container").css("border-top", "0px");*/
+
 </script>
 
 <%= render :partial => "splash_slider" %>

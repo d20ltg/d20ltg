@@ -32,6 +32,7 @@ $(document).ready(function() {
   $('.ckeditor').ckeditor({
       // optional config
   });
+
 });
 
 $(document).on("ready page:change", function() {
