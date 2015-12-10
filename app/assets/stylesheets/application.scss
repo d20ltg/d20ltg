@@ -134,3 +134,15 @@
   padding:1%;
   margin-left:2%;
 }
+
+#home-links {
+  font-size: large;
+  text-align: center;
+  margin-top: 30px;
+  div {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+    margin: 30px;
+  }
+}

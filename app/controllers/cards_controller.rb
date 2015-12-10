@@ -3,8 +3,6 @@ class CardsController < ApplicationController
   before_filter :requires_admin, :only => [:new, :edit, :create, :update]
 
   def index
-    logger.info("master params <><><><><><><><> #{params[:expac_id]}")
-
     @order_item = current_order.order_items.new
 
     if params[:filter]
@@ -17,20 +15,23 @@ class CardsController < ApplicationController
           @searched << card
         end
       end
-      logger.info("----------------- wat #{@searched.inspect} and AR relation: #{@cards} params #{params[:filter][:card]}---------------------")
       render :search
     elsif params[:expac_id]
       @expansion = Expansion.find(params[:expac_id])
       @cards = Card.where("expansion_id = ?", @expansion.id)
     else
       @expansion = Expansion.find(params[:expansion])
-      logger.info("--------------------- #{@expansion.inspect} ---------------------")
       @cards = Card.where("expansion_id = ?", @expansion.id)
     end
   end
 
   def show
     @card = Card.find(params[:id])
+    set = Expansion.find(@card.expansion_id).set_abbreviation
+    @card_data = MagicApiService.get_cards({ :set => set, :name => @card.name }).first
+    @image_url = MagicApiService.get_image_url_for_card(@card)
+    @card_text = card_text_to_html(@card_data['text'])
+    @order_item = current_order.order_items.new
   end
 
   def new
@@ -60,5 +61,14 @@ class CardsController < ApplicationController
 
   def card_params
     params.require(:card).permit!
+  end
+
+  def card_text_to_html(text)
+    text.gsub(/\n/, '<br>')
+        .gsub(/{([0-9WUBRGS])}/, get_symbol_tag('\1'))
+  end
+
+  def get_symbol_tag(name, size = 'small')
+    "<span class=\"symbol\"><img src=\"http://gatherer.wizards.com/Handlers/Image.ashx?size=#{size}&name=#{name}&type=symbol\" alt=\"{#{name}}\"></span>"
   end
 end

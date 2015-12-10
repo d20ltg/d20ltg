@@ -1,5 +1,5 @@
 <tr>
-  <td class="name"><%= card.name %></td>
+  <td class="name"><%= link_to card.name, card %></td>
   <td class="type"><%= card.card_type %></td>
   <td class="actions text-right">
     <% if @admin %>
