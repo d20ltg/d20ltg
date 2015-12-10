@@ -1,4 +1,7 @@
-<h1 class="centered">Tabletop Games</h1>
+<div>
+  <%= image_tag("board_games.jpg", height: '300px', width: '100%') %>
+  <h2 class="imageText"><span>Tabletop Games</span></h2>
+</div>
 
 
 <% if @tabletop_games != nil %>
@@ -27,5 +30,5 @@
 <br /><br />
 
 <% if @admin %>
-  <%= link_to 'New TabletopGame', tabletop_games_new_path, class: "btn btn-primary" %>
+  <%= link_to 'New Tabletop Game', tabletop_games_new_path, class: "btn btn-primary" %>
 <% end %>
