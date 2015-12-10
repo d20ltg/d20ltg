@@ -2,9 +2,7 @@
   <td class="name"><%= link_to "#{comic.comic_name}", comic_path(comic.id) %></td>
   <td class="type"><%= comic.condition %></td>
   <td class="actions text-right">
-    <% if @admin %>
-      <%= link_to "Edit", edit_comic_path(comic.id) %>
-    <% end %>
+
 
     <%= form_for order_item, remote: true, html: { class: "form-inline" } do |f| %>
       <%= f.hidden_field :comic_id, value: comic.id %>

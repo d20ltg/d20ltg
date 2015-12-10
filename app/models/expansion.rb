@@ -4,7 +4,7 @@ class Expansion < ActiveRecord::Base
   belongs_to :blocks
 
   validates :set_name, presence: true
-  #validates :image, presence: true
+  validates :image, presence: true
   validates :block_id, presence: true
   scope :expansions_asc, -> { order("created_at ASC") }
 end
