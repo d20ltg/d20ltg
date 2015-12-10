@@ -5,7 +5,6 @@
       <%= f.input :comic_name %>
       <%= f.input :universe_id, :as => :select, :collection => Hash[Universe.all.map { |uni| [uni.universe_name, uni.id] }] %>
       <%= f.input :condition %>
-      <%= f.input :stock, :label => "Quantity in Stock" %>
       <%= f.input :comments, :as => :text, :input_html => { :rows => 5 } %>
     <% end %>
 

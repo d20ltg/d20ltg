@@ -3,8 +3,6 @@ class ComicsController < ApplicationController
   def index
     logger.info("master params <><><><><><><><> #{params[:expac_id]}")
 
-    @order_item = current_order.order_items.new
-
     if params[:filter]
       @cards = Card.by_letter(params[:filter][:card])
       @searched = Array.new

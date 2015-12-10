@@ -24,6 +24,9 @@ Block.delete_all
 Expansion.delete_all
 Card.delete_all
 TabletopGame.delete_all
+Game.delete_all
+Universe.delete_all
+Comic.delete_all
 
 block1 = Block.create block_name: 'Innistrad'
 block2 = Block.create block_name: 'Khans of Tarkir'
@@ -58,3 +61,7 @@ game2 = TabletopGame.create set_name: 'Settlers of Catan', image: seed_image('se
 
 Game.create name: 'Star Wars Monopoly',          tabletop_game_id: game1.id
 Game.create name: 'Star Trek Settlers of Catan', tabletop_game_id: game2.id
+
+universe1 = Universe.create universe_name: 'Batman', image: seed_image('batman.jpg')
+
+Comic.create comic_name: 'Batman Returns', condition: 1, universe_id: universe1.id

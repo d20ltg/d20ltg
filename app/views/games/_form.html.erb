@@ -6,7 +6,6 @@
       <br />
       <%= f.input :tabletop_game_id, :as => :select, :collection => Hash[TabletopGame.all.map { |ttg| [ttg.set_name, ttg.id] }] %>
       <br />
-      <%= f.input :stock, :label => "Quantity in Stock" %>
     <% end %>
     <br />
 
