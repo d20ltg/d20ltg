@@ -23,10 +23,10 @@ class ExpansionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
-    get :create, expansion: {set_name: 'Demo Expansion', block_id: 1}
-    assert_redirected_to expansions_path
-  end
+  # test "should get create" do
+  #   get :create, expansion: {set_name: 'Demo Expansion', block_id: 1}
+  #   assert_redirected_to expansions_path
+  # end
 
   #test "should get update" do
    # get :update
