@@ -22,4 +22,6 @@
 <% end %>
 
 <br><br />
-<%= link_to 'New Universe', new_universe_path, class: "btn btn-primary" %>
+<% if @admin %>
+  <%= link_to 'New Universe', new_universe_path, class: "btn btn-primary" %>
+<% end %>

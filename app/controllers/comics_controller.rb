@@ -45,12 +45,14 @@ class ComicsController < ApplicationController
   def create
     @comic = Comic.create(comic_params)
     universe_id = @comic.universe_id
+    flash[:success] = "Successfully added a new Comic!"
     redirect_to "/comics?universe_id=#{universe_id}"
   end
 
   def update
     @comic = Comic.find(comic_params)
     if @comic.update_attributes(comic_params)
+      flash[:success] = "Successfully updated the Comic!"
       redirect_to "/comics?universe_id=#{universe_id}"
     end
   end
