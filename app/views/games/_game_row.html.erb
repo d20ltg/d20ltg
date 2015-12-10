@@ -1,9 +1,11 @@
 <tr>
-  <td class="name"><%= game.name %></td>
+  <% if @admin %>
+    <td class="name"><%= link_to "#{game.name}", edit_game_path(game.id) %></td>
+  <% else %>
+    <td class="name"><%= game.name %></td>
+  <% end %>
   <td class="actions text-right">
-    <% if @admin %>
-      <%= link_to "Edit", edit_game_path(game.id) %>
-    <% end %>
+
 
     <%= form_for order_item, remote: true, html: { class: "form-inline" } do |f| %>
       <%= f.hidden_field :game_id, value: game.id %>

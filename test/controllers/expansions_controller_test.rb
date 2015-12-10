@@ -24,7 +24,7 @@ class ExpansionsControllerTest < ActionController::TestCase
   end
 
   test "should get create" do
-    get :create, expansion: {set_name: 'Demo Expansion', block_id: 1}
+    get :create, expansion: {set_name: 'Demo Expansion', block_id: 1, image: fixture_file_upload('/file/avacyn.jpg', 'image/jpg')}
     assert_redirected_to expansions_path
   end
 
