@@ -1,4 +1,7 @@
-<h1 class="centered">Tabletop Games</h1>
+<div>
+  <%= image_tag("board_games.jpg", height: '300px', width: '100%') %>
+  <h2 class="imageText"><span>Tabletop Games</span></h2>
+</div>
 
 <% @tabletop_games.each do |ttg| %>
 	<%= link_to image_tag(ttg.image, height: '200px', width: '200px'), {:controller => "games", :action => "index", :tabletop_game => ttg.id} %>

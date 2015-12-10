@@ -33,20 +33,24 @@
 .content_wrap {
   //background-image: image-url("Mountain.jpg");
   //background-size: cover;
-  padding-top: 50px;
+  //padding-top: 50px;
 }
 
 .container {
-  margin-top: 100px;
+  //margin-top: 100px;
   max-width: 960px;
   display: block;
   clear:both;
-  overflow: hidden;
-  border-left: 1px solid #7F704F;
-  border-right: 1px solid #7F704F;
-  border-top: 1px solid #7F704F;
-  background-color: #E8E8E8;
-  opacity: 0.85;
+  //overflow: hidden;
+  //border-left: 1px solid #7F704F;
+  //border-right: 1px solid #7F704F;
+  //border-top: 1px solid #7F704F;
+  //background-color: #E8E8E8;
+  //opacity: 0.85;
+}
+
+.container-home {
+  margin-top: 100px;
 }
 
 /* styles for the events calendar (see railscasts 213) */
@@ -145,4 +149,21 @@
     float: none;
     margin: 30px;
   }
+}
+
+.imageText {
+  position: relative;
+  text-align:right;
+  top: -100px;
+  right: 0;
+  width: 100%;
+}
+
+.imageText span{
+  color: white;
+  font: bold 24px/45px Helvetica, Sans-Serif;
+  letter-spacing: -1px;
+  background: rgb(0,0,0);
+  background: rgba(0,0,0,0.7);
+  padding: 10px;
 }
