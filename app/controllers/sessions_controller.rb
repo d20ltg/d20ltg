@@ -4,8 +4,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:username], params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to root_path
-      flash[:success] = "Welcome!"
+      redirect_to admin_path
     else
       flash[:danger] = "Invalid email/password combination."
       redirect_to login_path

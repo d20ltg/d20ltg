@@ -12,8 +12,7 @@
     { :name => "Tabletop", :dest => tabletop_games_path } ]
 
 @links_admin =
-  [ { :name => "Accounts", :dest => users_path },
-    { :name => "Logout", :dest => logout_path } ]
+  [ { :name => "Logout", :dest => logout_path } ]
 
 @links_guest =
   [ { :name => "Login", :dest => login_path } ]
@@ -39,6 +38,10 @@
         <% @links_left.each {|link| %>
         <li><%= link_to link[:name], link[:dest] %></li>
         <% } %>
+
+        <% (@admin ? @links_admin : @links_guest).each do |link| %>
+        <li><%= link_to link[:name], link[:dest] %></li>
+        <% end %>
       </ul>
 
       <ul class="nav navbar-nav pull-right">
@@ -49,13 +52,9 @@
         <% @links_right.each {|link| %>
         <li><%= link_to link[:name], link[:dest] %></li>
         <% } %>
-
-        <% (@admin ? @links_admin : @links_guest).each do |link| %>
-        <li><%= link_to link[:name], link[:dest] %></li>
-        <% end %>
       </ul>
       <div id="top-logo" class="navbar-brand hidden-xs">
-	<a href="/">Clairemont Comics</a>
+        <a href="/">Clairemont Comics</a>
       </div>
     </div>
 
