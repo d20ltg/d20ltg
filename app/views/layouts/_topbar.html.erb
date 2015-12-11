@@ -39,10 +39,6 @@
         <% @links_left.each {|link| %>
         <li><%= link_to link[:name], link[:dest] %></li>
         <% } %>
-
-        <% (@admin ? @links_admin : @links_guest).each do |link| %>
-        <li><%= link_to link[:name], link[:dest] %></li>
-        <% end %>
       </ul>
 
       <ul class="nav navbar-nav pull-right">
@@ -53,6 +49,10 @@
         <% @links_right.each {|link| %>
         <li><%= link_to link[:name], link[:dest] %></li>
         <% } %>
+
+        <% (@admin ? @links_admin : @links_guest).each do |link| %>
+        <li><%= link_to link[:name], link[:dest] %></li>
+        <% end %>
       </ul>
       <div id="top-logo" class="navbar-brand hidden-xs">
 	<a href="/">Clairemont Comics</a>
