@@ -1,4 +1,7 @@
 class OrderItemsController < ApplicationController
+  before_filter :login_required
+  before_filter :requires_admin
+
   def create
     @order = current_order
     @order_item = @order.order_items.where(card_id: order_item_params[:card_id]).first

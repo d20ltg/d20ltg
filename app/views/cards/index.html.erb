@@ -7,7 +7,9 @@
     <tr>
       <th>Card Name</th>
       <th>Card Type</th>
-      <th class="text-right">Actions</th>
+      <% if @admin %>
+        <th class="text-right">Actions</th>
+      <% end %>
     </tr>
   </thead>
   <tbody>

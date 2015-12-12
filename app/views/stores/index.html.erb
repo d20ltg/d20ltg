@@ -20,5 +20,5 @@
 <% end %>
 
 <% if @admin %>
-  <div class="centered_data"><%= link_to "Edit this page!", stores_new_path %>
+  <div class="centered_data"><%= link_to "Edit this page!", stores_edit_path(@store.id), class: "btn btn-primary" %></div>
 <% end %>

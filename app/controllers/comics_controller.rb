@@ -1,21 +1,23 @@
 class ComicsController < ApplicationController
+  before_filter :login_required, :except => [:index, :show]
+  before_filter :requires_admin, :only => [:new, :edit, :create, :update]
   
   def index
     logger.info("master params <><><><><><><><> #{params[:expac_id]}")
 
-    if params[:filter]
-      @cards = Card.by_letter(params[:filter][:card])
-      @searched = Array.new
-      if @cards.length == 1
-        @searched << @cards[0]
-      else
-        @cards.each do |card|
-          @searched << card
-        end
-      end
-      logger.info("----------------- wat #{@searched.inspect} and AR relation: #{@cards} params #{params[:filter][:card]}---------------------")
-      render :search
-    elsif params[:universe_id]
+    #if params[:filter]
+      #@cards = Card.by_letter(params[:filter][:card])
+      #@searched = Array.new
+      #if @cards.length == 1
+        #@searched << @cards[0]
+      #else
+        #@cards.each do |card|
+          #@searched << card
+        #end
+      #end
+      #logger.info("----------------- wat #{@searched.inspect} and AR relation: #{@cards} params #{params[:filter][:card]}---------------------")
+      #render :search
+    if params[:universe_id]
       @universe = Universe.find(params[:universe_id])
       @comics = Comic.where("universe_id = ?", @universe.id)
     else

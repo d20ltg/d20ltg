@@ -1,4 +1,7 @@
 class CartsController < ApplicationController
+  before_filter :login_required
+  before_filter :requires_admin
+  
   def show
     @order_items = current_order.order_items
   end
