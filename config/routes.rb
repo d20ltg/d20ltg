@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'admin', :to => 'admin#index'
+
   get 'universes/index'
   get 'universes/show'
   get 'universes/edit'

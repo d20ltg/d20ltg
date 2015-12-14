@@ -1,16 +1,18 @@
 <tr>
   <td class="name"><%= link_to card.name, card %></td>
   <td class="type"><%= card.card_type %></td>
-  <td class="actions text-right">
-    <% if @admin %>
-      <%= link_to "Edit", edit_card_path(card.id) %>
-    <% end %>
+  <% if @admin %>
+    <td class="actions text-right">
+      <% if @admin %>
+        <%= link_to "Edit", edit_card_path(card.id), class: "btn btn-primary btn-xs" %>
+      <% end %>
 
-    <%= form_for order_item, remote: true, html: { class: "form-inline" } do |f| %>
-      <%= f.hidden_field :card_id, value: card.id %>
-      <%= f.hidden_field :quantity, value: 1 %>
-      <%= f.hidden_field :unit_price, value: "0.00" %>
-      <%= f.submit "Add to Cart", class: "btn btn-primary btn-xs", id: "add-to-cart" %>
-    <% end %>
-  </td>
+      <%= form_for order_item, remote: true, html: { class: "form-inline" } do |f| %>
+        <%= f.hidden_field :card_id, value: card.id %>
+        <%= f.hidden_field :quantity, value: 1 %>
+        <%= f.hidden_field :unit_price, value: "0.00" %>
+        <%= f.submit "Add to Cart", class: "btn btn-primary btn-xs", id: "add-to-cart" %>
+      <% end %>
+    </td>
+  <% end %>
 </tr>

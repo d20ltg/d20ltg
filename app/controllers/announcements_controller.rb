@@ -1,4 +1,7 @@
 class AnnouncementsController < ApplicationController
+  before_filter :login_required
+  before_filter :requires_admin
+
   def index
     @announcements = Announcement.all
   end

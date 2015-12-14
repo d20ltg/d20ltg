@@ -1,0 +1,33 @@
+<div>
+  <%= image_tag("admin.jpg", height: '300px', width: '100%') %>
+  <h2 class="imageText"><span>Administration Dashboard</span></h2>
+</div>
+
+
+<div class="actions">
+  <%= link_to 'Add a Magic Set', expansions_new_path, class: 'btn btn-primary' %>
+  <%= link_to 'Add a Comic', comics_new_path, class: 'btn btn-primary' %>
+  <%= link_to 'Add a Tabletop Game', tabletop_games_new_path, class: 'btn btn-primary' %>
+  <%= link_to 'Add an Announcement', announcements_new_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="actions">
+  <%= link_to 'Add an Event', events_new_path, class: 'btn btn-primary' %>
+  <%= link_to 'Add a Recurring Event', recurring_events_new_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="actions">
+  <%= link_to 'Search for Magic Cards', static_pages_home_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="actions">
+  <% if @store %>
+    <%= link_to 'Edit Store Hours and Information', stores_edit_path(@store.id), class: 'btn btn-primary' %>
+  <% else %>
+    <%= link_to 'Edit Store Hours and Information', stores_new_path, class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<div class="actions">
+  <%= link_to 'Manage User Accounts', users_path, class: 'btn btn-primary' %>
+</div>
