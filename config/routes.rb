@@ -73,6 +73,7 @@ Rails.application.routes.draw do
   get 'events/edit'
   get 'events/create'
   get 'events/upcoming'
+  get 'events/delete'
 
   get 'recurring_events/new'
   get 'recurring_events/edit'

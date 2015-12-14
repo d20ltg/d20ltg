@@ -40,6 +40,11 @@ class EventsController < ApplicationController
     render :partial=>'upcoming'
   end
 
+  def destroy
+    Event.find(params[:id]).destroy
+    redirect_to events_path
+  end
+
   private
 
     def event_params
