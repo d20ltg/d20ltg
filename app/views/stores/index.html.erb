@@ -1,10 +1,11 @@
-<h1 class="centered_data">d20 Legendary Tabletop Games!</h1>
+<div>
+  <%= image_tag("clairemont_comics.jpg", height: '300px', width: '100%') %>
+  <h2 class="imageText"><span>Clairemont Comics</span></h2>
+</div>
 
 <% if @store != nil %>
 
   <div class="centered_data">
-    <br><br />
-    <br><br />
     <%= @store.store_address %>
     <br><br />
     <%= @store.store_phone %>
