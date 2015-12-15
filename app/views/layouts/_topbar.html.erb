@@ -59,11 +59,8 @@
                   <li><%= link_to "Hidden Universes", universes_path(:hidden => true) %></li>
                 </ul>
               </li>
-            <% else %>
-              <li><%= link_to link[:name], link[:dest] %></li>
-            <% end %>
 
-            <% if link[:name].eql? "Magic" and @admin %>
+            <% elsif link[:name].eql? "Magic" and @admin %>
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Magic
                   <span class="caret"></span></a>

@@ -2,10 +2,10 @@
 
 one:
   username: MyString
-  hashed_password: MyString
+  password_digest: MyString
   admin: true
 
 two:
   username: MyString
-  hashed_password: MyString
+  password_digest: MyString
   admin: true

@@ -25,12 +25,12 @@ class UsersControllerTest < ActionController::TestCase
     get :index
     assert_response :success
   end
-
+=begin
   test "should get create" do
     get :create, :user => {'username' => 'Demo User'}
     assert_redirected_to users_path
   end
-
+=end
   test "should get destroy" do
     get :destroy, id: @user.id
     assert_response :success
