@@ -2,4 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'View all games', games_path, class: "btn btn-primary" %>
+<%= link_to 'View all games', games_path(:ttg_id => @game.tabletop_game_id), class: "btn btn-primary" %>
