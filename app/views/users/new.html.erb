@@ -4,9 +4,8 @@
   <%= semantic_form_for(@user, :html => { :multipart => true }) do |f| %>
     <%= f.inputs do %>
       <%= f.input :username %>
-      <%= f.input :password %>
-      <%= f.input :password_confirmation %>
-      <%= f.label :admin, "Admin?" %> &#09; <%= f.check_box :admin %>
+      <%= f.input :hashed_password %>
+       
     <% end %>
 
     <%= f.action :submit, as: :button, :disable_with => "Saving..." %>
