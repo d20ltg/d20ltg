@@ -1,62 +1,86 @@
 <%
-@title = "Clairemont Comics"
+    @title = "Clairemont Comics"
 
 @links_left =
   [ { :name => "Home", :dest => "/" },
     { :name => "Events", :dest => events_path },
     { :name => "About", :dest => stores_path } ]
 
-@links_right =
-  [ { :name => "Magic", :dest => expansions_path },
-    { :name => "Comics", :dest => universes_path },
-    { :name => "Tabletop", :dest => tabletop_games_path } ]
+  @links_right =
+    [ { :name => "Magic", :dest => expansions_path },
+      { :name => "Comics", :dest => universes_path },
+      { :name => "Tabletop", :dest => tabletop_games_path } ]
 
-@links_admin =
-  [ { :name => "Logout", :dest => logout_path } ]
+    @links_admin =
+      [ { :name => "Logout", :dest => logout_path } ]
 
-@links_guest =
-  [ { :name => "Login", :dest => login_path } ]
-%>
+    @links_guest =
+      [ { :name => "Login", :dest => login_path } ]
+    %>
 
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="navbar-inner">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-inner">
 
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand visible-xs" href="/">Clairemont Comics</a>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand visible-xs" href="/">Clairemont Comics</a>
 
-      <hr />
-    </div>
-
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav pull-left">
-        <% @links_left.each {|link| %>
-        <li><%= link_to link[:name], link[:dest] %></li>
-        <% } %>
-
-        <% (@admin ? @links_admin : @links_guest).each do |link| %>
-        <li><%= link_to link[:name], link[:dest] %></li>
-        <% end %>
-      </ul>
-
-      <ul class="nav navbar-nav pull-right">
-        <% if @admin %>
-        <li role="presentation"><%= link_to render('layouts/cart_text'), carts_show_path, class: "cart-text" %></li>
-        <% end %>
-
-        <% @links_right.each {|link| %>
-        <li><%= link_to link[:name], link[:dest] %></li>
-        <% } %>
-      </ul>
-      <div id="top-logo" class="navbar-brand hidden-xs">
-        <a href="/">Clairemont Comics</a>
+        <hr />
       </div>
-    </div>
 
-  </div>
-</nav>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-left">
+          <% @links_left.each {|link| %>
+            <li><%= link_to link[:name], link[:dest] %></li>
+          <% } %>
+
+          <% (@admin ? @links_admin : @links_guest).each do |link| %>
+            <li><%= link_to link[:name], link[:dest] %></li>
+          <% end %>
+        </ul>
+
+        <ul class="nav navbar-nav pull-right">
+          <% if @admin %>
+            <li role="presentation"><%= link_to render('layouts/cart_text'), carts_show_path, class: "cart-text" %></li>
+          <% end %>
+
+          <% @links_right.each {|link| %>
+            <% if link[:name].eql? "Comics" and @admin %>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Comics
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to link[:name], link[:dest] %>
+                  <li><%= link_to "Hidden Universes", universes_path(:hidden => true) %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to link[:name], link[:dest] %></li>
+            <% end %>
+
+            <% if link[:name].eql? "Magic" and @admin %>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Magic
+                  <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to link[:name], link[:dest] %>
+                  <li><%= link_to "Hidden Expansions", expansions_path(:hidden => true) %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to link[:name], link[:dest] %></li>
+            <% end %>
+          <% } %>
+        </ul>
+        <div id="top-logo" class="navbar-brand hidden-xs">
+          <a href="/">Clairemont Comics</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>

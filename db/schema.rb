@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210194256) do
+ActiveRecord::Schema.define(version: 20151215024018) do
 
   create_table "announcements", force: true do |t|
     t.string   "image"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20151210194256) do
     t.string   "image"
     t.integer  "block_id"
     t.string   "set_abbreviation"
+    t.boolean  "hidden",           default: false
   end
 
   create_table "games", force: true do |t|
@@ -143,6 +144,7 @@ ActiveRecord::Schema.define(version: 20151210194256) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+    t.boolean  "hidden",        default: true
   end
 
   create_table "users", force: true do |t|

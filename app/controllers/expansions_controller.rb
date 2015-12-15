@@ -57,8 +57,32 @@ class ExpansionsController < ApplicationController
   end
 
   def index
-    @expansions = Expansion.all
-    @blocks = Block.all
+    if params[:hidden]
+      @expansions = Expansion.hidden
+      @hidden = true
+    else
+      @expansions = Expansion.visible
+      @hidden = false
+    end
+    @blocks = Block.all 
+  end
+
+  def hide
+    @expansion = Expansion.find(params[:id])
+    @expansion.hidden = true
+    @expansion.save
+
+    flash[:success] = "Expansion was successfully hidden"
+    redirect_to expansions_path
+  end
+
+  def unhide
+    @expansion = Expansion.find(params[:id])
+    @expansion.hidden = false
+    @expansion.save
+
+    flash[:success] = "Expansion was successfully unhidden."
+    redirect_to expansions_path(:hidden => true)
   end
 
   private

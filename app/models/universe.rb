@@ -5,4 +5,7 @@ class Universe < ActiveRecord::Base
   validates :image, presence: true
 
   has_many :comics
+
+  scope :visible, -> { where(:hidden => false) }
+  scope :hidden, -> { where(:hidden => true) }
 end

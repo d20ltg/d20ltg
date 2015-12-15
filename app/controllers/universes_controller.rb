@@ -3,7 +3,13 @@ class UniversesController < ApplicationController
   before_filter :requires_admin, :only => [:new, :edit, :create, :update]
 
   def index
-    @universes = Universe.all
+    if params[:hidden]
+      @universes = Universe.hidden
+      @hidden = true
+    else
+      @universes = Universe.visible
+      @hidden = false
+    end
   end
 
   def show
@@ -37,6 +43,24 @@ class UniversesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def hide
+    @universe = Universe.find(params[:id])
+    @universe.hidden = true
+    @universe.save
+
+    flash[:success] = "Universe was successfully hidden"
+    redirect_to universes_path
+  end
+
+  def unhide
+    @universe = Universe.find(params[:id])
+    @universe.hidden = false
+    @universe.save
+
+    flash[:success] = "Universe was successfully unhidden."
+    redirect_to universes_path(:hidden => true)
   end
 
   private

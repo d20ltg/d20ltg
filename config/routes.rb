@@ -115,11 +115,21 @@ Rails.application.routes.draw do
   resources :recurring_events
   resources :stores
   resources :blocks
-  resources :expansions
+  resources :expansions do
+    member do
+      put "hide"
+      put "unhide"
+    end
+  end
   resources :tabletop_games
   resources :games
   resources 'sessions', :only => [:new, :create, :destroy]
   resources :comics
-  resources :universes
+  resources :universes do
+    member do
+      put "hide"
+      put "unhide"
+    end
+  end
 
 end
