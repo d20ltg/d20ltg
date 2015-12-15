@@ -66,6 +66,7 @@ Rails.application.routes.draw do
   get 'games/edit'
   get 'games/new'
   get 'games/show'
+  delete 'games/destroy'
 
   get 'events/index'
   get 'events/show'
