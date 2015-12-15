@@ -8,10 +8,9 @@
       <%= f.input :stock, :label => "Quantity in Stock" %>
     <% end %>
 
-    <br><br />
+    <%= f.actions do %>
+      <%= f.action :submit, as: :button, :disable_with => "Saving...", :class => "btn btn-primary" %>
+    <% end %>
 
-    <fieldset class="form-group">
-      <input type="submit" value="Create Comic" class="btn btn-primary">
-    </fieldset>
   <% end %>
 </div>

@@ -36,12 +36,4 @@ class EventsControllerTest < ActionController::TestCase
     assert_redirected_to events_path
   end
 
-  test "should destroy event" do
-    assert_difference('Event.count', -1) do
-      delete :destroy, id: @event.id
-    end
-
-    assert_redirected_to events_path
-  end
-
 end

@@ -11,10 +11,5 @@
   <br>
   <%= @store.store_phone %>
   <br><br />
-  <% if @admin %>
-    <%= link_to 'Edit This Event', edit_event_path, class: "btn btn-primary" %>
-
-    <%= button_to('Delete This Event', @event,
-                  method: 'delete', data: { confirm: 'Are you sure?' }, class: 'btn btn-danger') %>
-  <% end %>
+  <%= link_to 'Edit Event', edit_event_path %>
 </div>

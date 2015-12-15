@@ -6,11 +6,6 @@
   color: black;
 }
 
-.form-control,
-.form-actions {
-  margin-bottom: 15px;
-}
-
 form, form div {
   display: inline;
   margin: 0;
@@ -19,16 +14,12 @@ form, form div {
 }
 
 .actions a {
-  margin-top: 0px;
-  padding-top: 0px;
+  margin-top: 2px;
+  padding-top: 2px;
 }
 
 .card-text {
   padding-left: 0;
   margin-left: 0;
-  margin-top: 15px;
-}
-
-.margin {
   margin-top: 15px;
 }

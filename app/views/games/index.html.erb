@@ -6,23 +6,16 @@
   <thead>
     <tr>
       <th>Game Name</th>
-      <% if @admin %>
-        <th>Actions</th>
-      <% end %>
     </tr>
   </thead>
   <tbody>
     <% @games.each do |game| %>
       <tr>
-      <% if @admin %>
-        <td class="name"><%= link_to "#{game.name}", edit_game_path(game.id) %></td>
-        <td class="">
-          <%= button_to('Delete Game', game,
-                        method: 'delete', data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs') %>
-        </td>
-      <% else %>
-        <td class="name"><%= game.name %></td>
-      <% end %>
+	<% if @admin %>
+	  <td class="name"><%= link_to "#{game.name}", edit_game_path(game.id) %></td>
+	<% else %>
+	  <td class="name"><%= game.name %></td>
+	<% end %>
       </tr>
     <% end %>
   </tbody>

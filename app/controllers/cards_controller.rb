@@ -57,14 +57,6 @@ class CardsController < ApplicationController
     end
   end
 
-  def destroy
-    @card = Card.find(params[:id])
-    expac_id = @card.expansion_id
-    @card.destroy
-    flash[:success] = "Successfully removed Card."
-    redirect_to "/cards?expac_id=#{expac_id}"
-  end
-
   private
 
   def card_params
