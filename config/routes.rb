@@ -38,8 +38,8 @@ Rails.application.routes.draw do
   get 'user/index'
   get 'user/create'
   get 'user/destroy'
-  get "login", :to => "users#login"
-  get "logout", :to => "users#logout"
+  get "login", :to => "sessions#login"
+  get "logout", :to => "sessions#logout"
 
   get 'stores/new'
   get 'stores/edit'
@@ -66,6 +66,7 @@ Rails.application.routes.draw do
   get 'games/edit'
   get 'games/new'
   get 'games/show'
+  delete 'games/destroy'
 
   get 'events/index'
   get 'events/show'
@@ -73,6 +74,7 @@ Rails.application.routes.draw do
   get 'events/edit'
   get 'events/create'
   get 'events/upcoming'
+  delete 'events/destroy'
 
   get 'recurring_events/new'
   get 'recurring_events/edit'
@@ -87,6 +89,7 @@ Rails.application.routes.draw do
   get 'cards/edit'
   get 'cards/create'
   get 'cards/search'
+  delete 'cards/destroy'
 
   get 'announcements/index'
   get 'announcements/open'
@@ -94,16 +97,17 @@ Rails.application.routes.draw do
   get 'announcements/edit'
 
   get 'static_pages/home'
-  get 'static_pages/about'
-  get 'static_pages/contact'
-  get 'static_pages/magic'
-  get 'static_pages/tabletop'
-  #get 'static_pages/comics'
-  get 'static_pages/calendar'
-  get 'static_pages/login'
-  get 'static_pages/gatherer'
+  #get 'static_pages/about'
+  #get 'static_pages/contact'
+  #get 'static_pages/magic'
+  #get 'static_pages/tabletop'
+  #get 'static_pages/calendar'
+  #get 'static_pages/login'
+  #get 'static_pages/gatherer'
 
   get 'sessions/create'
+  post 'sessions/login_attempt'
+  get 'sessions/login'
   get 'sessions/destroy'
 
   resources :users, :only => [:index, :new, :create, :destroy, :login]

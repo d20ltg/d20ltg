@@ -1,7 +1,7 @@
 class ComicsController < ApplicationController
   before_filter :login_required, :except => [:index, :show]
   before_filter :requires_admin, :only => [:new, :edit, :create, :update]
-  
+
   def index
     logger.info("master params <><><><><><><><> #{params[:expac_id]}")
 
@@ -61,6 +61,7 @@ class ComicsController < ApplicationController
     @comic = Comic.find(params[:id])
     @universe = Universe.find(@comic.universe_id)
     @comic.destroy
+    flash[:success] = "Successfully deleted the Comic."
     redirect_to "/comics?universe_id=#{@universe.id}"
   end
 
