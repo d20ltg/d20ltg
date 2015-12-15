@@ -66,6 +66,7 @@ Rails.application.routes.draw do
   get 'games/edit'
   get 'games/new'
   get 'games/show'
+  delete 'games/destroy'
 
   get 'events/index'
   get 'events/show'
@@ -73,6 +74,7 @@ Rails.application.routes.draw do
   get 'events/edit'
   get 'events/create'
   get 'events/upcoming'
+  delete 'events/destroy'
 
   get 'recurring_events/new'
   get 'recurring_events/edit'
@@ -87,6 +89,7 @@ Rails.application.routes.draw do
   get 'cards/edit'
   get 'cards/create'
   get 'cards/search'
+  delete 'cards/destroy'
 
   get 'announcements/index'
   get 'announcements/open'

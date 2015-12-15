@@ -18,6 +18,5 @@
 <%= link_to "Back to Comics", comics_path, class: "btn btn-primary"%>
 <br><br />
 <% if @admin %>
-  <%= link_to "Delete", @comic, :confirm => "Are you sure you want to delete this posting?", :method => :delete, class: "btn btn-primary" %></td>
+  <%= link_to "Delete this Comic", @comic, :confirm => "Are you sure you want to delete this posting?", :method => :delete, class: "btn btn-danger" %></td>
 <% end %>
-

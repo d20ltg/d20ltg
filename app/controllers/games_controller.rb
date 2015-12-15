@@ -55,6 +55,14 @@ class GamesController < ApplicationController
     end
   end
 
+  def destroy
+    @game = Game.find(params[:id])
+    ttg_id = @game.tabletop_game_id
+    @game.destroy
+    flash[:success] = "Successfully removed Game."
+    redirect_to "/games?ttg_id=#{ttg_id}"
+  end
+
   private
 
   def game_params
