@@ -10,6 +10,7 @@ gem 'turbolinks',     '2.5.3'
 gem 'jbuilder',       '2.3.1'
 gem 'carrierwave',    '0.10.0'
 gem 'rmagick',        '2.15.4'
+gem 'bcrypt', :require => 'bcrypt'
 gem 'bxslider-rails'
 gem 'ckeditor_rails'
 gem "minitest-stub_any_instance"

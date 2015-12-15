@@ -10,6 +10,8 @@ def seed_image(file_name)
   File.open(File.join(Rails.root, "/app/assets/images/#{file_name}"))
 end
 
+User.delete_all
+
 Store.create(
   store_address: '2207 Fairfax St, Eau Claire, WI 54701',
   store_phone: '(715) 456-9738',
@@ -18,7 +20,7 @@ Store.create(
   store_hours: '10 am - 8 pm'
 )
 
-User.create username: 'admin', hashed_password: 'admin', admin: true
+User.create username: 'admin', password: 'admin', password_confirmation: 'admin', admin: true
 
 Block.delete_all
 Expansion.delete_all
