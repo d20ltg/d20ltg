@@ -88,6 +88,7 @@ Rails.application.routes.draw do
   get 'cards/edit'
   get 'cards/create'
   get 'cards/search'
+  delete 'cards/destroy'
 
   get 'announcements/index'
   get 'announcements/open'
